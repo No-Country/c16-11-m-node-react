@@ -1,0 +1,15 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "proyecto no-code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "c16-11-m-node-react",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.1.2"
+  }
+}
