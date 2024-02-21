@@ -1,0 +1,37 @@
+### create category
+POST http://localhost:8000/category/create-category
+Content-Type: application/json
+
+{
+    "name":"complementos"
+}
+
+### get category by ID for query
+GET http://localhost:8000/category?id=65d4f5fd09bfc01783af424d
+
+### get all category
+GET http://localhost:8000/category
+
+
+### create subCategory
+POST http://localhost:8000/category/create-subCategory
+Content-Type: application/json
+
+{
+    "name":"dibujos",
+    "categoryId":"65d541367b3fe2a6049d19a3"
+}
+
+### get all subCategory
+GET  http://localhost:8000/category/subCategory
+
+### get subCategory by id
+GET  http://localhost:8000/category/subCategory?id=65d543547b3fe2a6049d19aa
+
+### get all subCategory by category
+GET  http://localhost:8000/category/subCategoryByCategory
+Content-Type: application/json
+
+{
+    "catId":"65d541367b3fe2a6049d19a3"
+}

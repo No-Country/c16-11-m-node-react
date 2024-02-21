@@ -1,11 +1,11 @@
-const { response } = require("express")
+
 const Globos = require("../models/Globos")
 
 //funcion para crear producto globos
 const createGlobos = async (req, res) => {
     const { name, description, available, subcategoria_Id } = req.body
 
-    const globo = new Globos({ name, description, available, subcategoria })
+    const globo = new Globos({ name, description, available, subcategoria_Id })
     await globo.save()
 
     res.status(201)
@@ -22,10 +22,10 @@ const getGlobos = async (req, res) => {
     if (globoId !== undefined) {
         query = Globos.findById(globoId)
     } else {
-        queri = Globos.find({})
+        query = Globos.find({})
     }
 
-    const reaponse = await query.exec()
+    const response = await query.exec()
 
     res.json(response)
 

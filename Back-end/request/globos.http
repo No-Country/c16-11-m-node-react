@@ -1,0 +1,9 @@
+### create globos
+POST  http://localhost:8000/globos/crear
+Content-Type: application/json
+
+{
+    "name":"globo rosa",
+    "description": "description 1",
+    "subCategoria":
+}
