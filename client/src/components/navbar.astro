@@ -1,0 +1,168 @@
+---
+---
+
+<nav class="navbar">
+  <div class="pink-section">
+    <div class="phone">
+      <div class="phone-content">
+        <img src="/icons/phone.png" alt="Phone Icon" />
+        <span class="phone-number">954128609</span>
+        <span class="horarios">Horarios</span>
+        <img src="/icons/flecha.png" alt="Arrow Icon" class="arrow" />
+      </div>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar..." />
+    </div>
+    <div class="social-icons">
+      <div class="social-content">
+      <img src="/icons/whatsapp.png" alt="WhatsApp Icon" />
+      <img src="/icons/facebook.png" alt="Facebook Icon" />
+      <img src="/icons/instagram.png" alt="Instagram Icon" />
+      <img src="/icons/pinterest.png" alt="Pinterest Icon" />
+      <img src="/icons/linkedin.png" alt="LinkedIn Icon" />
+      <img src="/icons/gorjeo.png" alt="Icono X" />
+    </div>
+    </div>
+  </div>
+
+  <div class="white-section">
+    <div class="logo">
+      <img src="/logo-detalles-luna.png" alt="Logo Detalles Luna" />
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="#">Decoración</a></li>
+        <li><a href="#">Globos</a></li>
+        <li><a href="#">Detalles</a></li>
+        <li><a href="#">Empresas</a></li>
+        <li><a href="#">Sobre Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><img src="/icons/megusta.png" alt="Me gusta" class="social-icon" /></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style scoped>
+  .navbar {
+    width: 1440px;
+    height: 398px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    color: #fff;
+  }
+
+  .pink-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f6cfdf;
+    padding: 1rem;
+  }
+
+  .phone {
+    display: flex;
+    align-items: center;
+    color: #9dcbca;
+  }
+
+  .phone-content {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 230, 240, 0.9);
+    width: auto;
+    padding: 5px;
+    border-radius: 20px;
+  }
+
+  .phone img {
+    width: 30px;
+    margin-right: 5px;
+  }
+
+  .phone .phone-number {
+    color: #f85e91; 
+    margin-right: 30px; 
+    font-weight: bold;
+    font-family: 'Arial Narrow', sans-serif;
+
+  }
+
+  .phone .horarios {
+    color: #fc6799; 
+    margin-right: 10px; 
+    font-family: 'Arial Narrow', sans-serif;
+
+  }
+
+  .arrow {
+    width: 3px;
+    color: #fa8bb0;
+  }
+
+  .search-bar {
+    border-radius: 20px;
+    background-color: white;
+    padding: 5px 10px;
+  }
+
+  .search-bar input {
+    border: none;
+    outline: none;
+    width: 200px;
+    padding: 5px;
+    border-radius: 20px;
+  }
+
+  .social-icons {
+    display: flex;
+    align-items: center;
+  }
+
+  .social-content {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 230, 240, 0.9);
+    width: auto;
+    padding: 5px;
+    border-radius: 20px;
+  }
+
+  .social-icons img {
+    width: 30px;
+    margin-right: 10px;
+  }
+
+  .social-icon {
+    width: 40px; 
+    color: #e95090;
+    margin-top: -25px;
+  }
+
+  .white-section {
+    text-align: center; 
+  }
+
+  .logo img {
+    height: 250px;
+    width: auto;
+  }
+
+  .menu ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center; 
+  }
+
+  .menu li a {
+    font-size: 20px;
+    font-family: 'Arial Narrow', sans-serif;
+    font-style: italic;
+    text-decoration: none;
+    color: #333; 
+  }
+</style>
