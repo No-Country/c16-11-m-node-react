@@ -3,11 +3,11 @@ POST http://localhost:8000/category/create-category
 Content-Type: application/json
 
 {
-    "name":""
+    "name":"figuras"
 }
 
 ### get category by ID for query
-GET http://localhost:8000/category?id=65d4f5fd09bfc01783af424d
+GET http://localhost:8000/category?id=65d6bee79c3efb921a
 
 ### get all category
 GET http://localhost:8000/category
@@ -33,5 +33,5 @@ GET  http://localhost:8000/category/subCategoryByCategory
 Content-Type: application/json
 
 {
-    "catId":"65d5548740c36abe29c885eb"
+    "catId":"65d5548740c36abe29c88"
 }

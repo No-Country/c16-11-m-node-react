@@ -13,7 +13,8 @@ const validateCategoryData = [
 // Middleware para validar el formato de ID de MongoDB en consultas
 const validateQueryMongoId = [
     // Verifica opcionalmente que el parámetro de consulta 'id' sea un ID de MongoDB válido
-    query('id').optional().isMongoId().withMessage('debe ser un id formato mongo')
+    query('id').optional().isMongoId().withMessage('debe ser un id formato mongo'),
+    requestValidation
 ]
 
 // Middleware para validar los datos de la categoría
@@ -26,8 +27,17 @@ const validateSubCategoryData = [
     requestValidation,
 ]
 
+
+// Middleware para validar los datos de la categoría - se repite en globos con distinto mensaje
+const validateBodyMongoId = [
+    body('catId').notEmpty().withMessage('el id de la categoria es requerida'),
+    body('catId').isMongoId().withMessage('el id de la categoria deberia ser formato mongo'),    
+    requestValidation
+]
+
 module.exports = {
     validateCategoryData,
     validateQueryMongoId,
-    validateSubCategoryData
+    validateSubCategoryData,
+    validateBodyMongoId
 }

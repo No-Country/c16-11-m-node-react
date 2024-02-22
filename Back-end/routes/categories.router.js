@@ -1,5 +1,5 @@
 const { createCategory, createSubcategory, getCategory, getSubCategory, getsubCategoryByCategory } = require('../controllers/category.controller')
-const { validateCategoryData, validateQueryMongoId, validateSubCategoryData } = require('../middlewares/category.middleware')
+const { validateCategoryData, validateQueryMongoId, validateSubCategoryData, validateBodyMongoId } = require('../middlewares/category.middleware')
 const { errorMiddleware } = require('../middlewares/common.middleware')
 
 const categoryRouter = require('express').Router()
@@ -17,7 +17,7 @@ categoryRouter.post('/create-subCategory',validateSubCategoryData, createSubcate
 categoryRouter.get('/subCategory',validateQueryMongoId, getSubCategory, errorMiddleware)
 
 //buscar sub-categoria/s
-categoryRouter.get('/subCategoryByCategory', getsubCategoryByCategory, errorMiddleware)
+categoryRouter.get('/subCategoryByCategory',validateBodyMongoId, getsubCategoryByCategory, errorMiddleware)
 
 module.exports = { categoryRouter }
 

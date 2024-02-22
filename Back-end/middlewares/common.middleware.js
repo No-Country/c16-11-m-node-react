@@ -2,10 +2,10 @@ const { validationResult } = require("express-validator")
 const { MongoServerError } = require('mongodb')
 
 // Verifica si hay errores de validación en la solicitud utilizando express-validator.
-const requestValidation = (req, res , next) => {
+const requestValidation = (req, res, next) => {
     const result = validationResult(req)
 
-    if (!result.isEmpty()) return res.json({errors: result.array()})
+    if (!result.isEmpty()) return res.status(400).json({ errors: result.array() })
 
     next()
 }
@@ -21,7 +21,7 @@ const errorMiddleware = (err, req, res, next) => {
     }
 
     res.status(500)
-    res.json({ message:'internal error'})
+    res.json({ message: 'internal error' })
 }
 
 
