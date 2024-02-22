@@ -3,7 +3,7 @@ POST http://localhost:8000/category/create-category
 Content-Type: application/json
 
 {
-    "name":"complementos"
+    "name":""
 }
 
 ### get category by ID for query
@@ -18,8 +18,8 @@ POST http://localhost:8000/category/create-subCategory
 Content-Type: application/json
 
 {
-    "name":"dibujos",
-    "categoryId":"65d541367b3fe2a6049d19a3"
+    "name":"comunion",
+    "categoryId":"65d554a440c36abe29c885ed"
 }
 
 ### get all subCategory
@@ -33,5 +33,5 @@ GET  http://localhost:8000/category/subCategoryByCategory
 Content-Type: application/json
 
 {
-    "catId":"65d541367b3fe2a6049d19a3"
+    "catId":"65d5548740c36abe29c885eb"
 }

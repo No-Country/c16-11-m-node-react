@@ -3,7 +3,30 @@ POST  http://localhost:8000/globos/crear
 Content-Type: application/json
 
 {
-    "name":"globo rosa",
-    "description": "description 1",
-    "subCategoria":
+    "name": "comunion",
+    "description": "description 2",
+    "subCategory_id": "65d554a440c36abe29c885ed"
+}
+
+### get all globos
+GET http://localhost:8000/globos/get
+
+### get globos by id
+GET http://localhost:8000/globos/get?id=65d57af3d1b3a2e0bfdd3bbe
+
+### update available
+PATCH   http://localhost:8000/globos/product-available
+Content-Type: application/json
+
+{
+    "globoId":"65d57a4dd1b3a2e0bfdd3bbc",
+    "available": true
+}
+
+### get globos for category
+GET http://localhost:8000/globos/globosBySubCategory
+Content-Type: application/json
+
+{
+    "subCatId":"65d558e340c36abe29c885f5"
 }

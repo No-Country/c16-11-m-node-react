@@ -2,15 +2,20 @@ const Categoria = require("../models/Categorias")
 const SubCategoria = require("../models/SubCategorias")
 
 //crear categoria
-const createCategory = async (req, res) => {
-    const { name, description } = req.body
+const createCategory = async (req, res, next) => {
+    try {
+        const { name, description } = req.body
 
-    const category = new Categoria({ name, description })
+        const category = new Categoria({ name, description })
 
-    await category.save()
+        await category.save()
 
-    res.status(201)
-    res.json(category)
+        res.status(201)
+        res.json(category)
+
+    } catch (err) {
+        next(err)
+    }
 }
 
 //buscar categoria/s
@@ -32,11 +37,11 @@ const getCategory = async (req, res) => {
 }
 
 //buscar subcategoria con id de categorias
-const getsubCategoryByCategory = async(req, res) => {
-    const {catId } = req.body
+const getsubCategoryByCategory = async (req, res) => {
+    const { catId } = req.body
 
     const categoria = await Categoria.findById(catId)
-    const subCategoria = await SubCategoria.find({categoryId: catId})
+    const subCategoria = await SubCategoria.find({ categoryId: catId })
 
     res.json(subCategoria)
 }
