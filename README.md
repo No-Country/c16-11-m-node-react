@@ -1,4 +1,4 @@
-![Detalles Luna]([img]https://i.imgur.com/gVgn35A.png[/img])
+[![logo-detalles-luna.png](https://i.postimg.cc/bwzMYf9F/logo-detalles-luna.png)](https://postimg.cc/6ymzzSSd)
 
 # Detalles Luna 2.0
 
