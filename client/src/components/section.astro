@@ -1,0 +1,28 @@
+---
+import Button from "./button.astro";
+import Carrusel from "./carrusel.astro";
+const { title, description, bgColor, titleColor } = Astro.props;
+---
+
+<section
+  id={title}
+  class=`box-content px-5 my-10 mx-auto max-w-5xl md:px-10 md:py-10 lg:max-w-6xl xl:max-w-7xl ${bgColor}`
+>
+  <div class="md:flex md:gap-x-8">
+    <div class="md:w-2/4">
+      <Carrusel />
+    </div>
+
+    <div class="md:w-2/4 flex justify-center">
+      <header class="w-96">
+        <h2 class=`font-lobster font-semibold text-4xl ${titleColor}`>
+          {title}
+        </h2>
+        <p class="font-lobster text-[#636B78] text-xl pt-5 pb-4">
+          {description}
+        </p>
+        <Button />
+      </header>
+    </div>
+  </div>
+</section>

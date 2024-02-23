@@ -1,8 +1,16 @@
 ---
+import Section from "../components/section.astro";
 import { siteConfig } from "../config/site";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title={siteConfig.name}>
-  <h1>Astro</h1>
+  <main>
+    <Section
+      title="Productos destacados"
+      description="Astro is a new kind of static site builder that delivers lightning-fast performance with a modern developer experience."
+      bgColor="bg-[#F1C9CF]"
+      titleColor="text-[#E670A1]"
+    />
+  </main>
 </Layout>

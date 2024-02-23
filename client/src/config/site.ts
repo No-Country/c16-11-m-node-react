@@ -11,7 +11,7 @@ export const siteConfig = {
   twitter: "https://twitter.com/detallesluna",
 
   // Contact
-  phone: "9954128609",
+  phone: "34954128609",
   email: "pedidos@detallesluna.com",
   address: "Avda de Europa 8, Montequinto. 41089 Sevilla",
 

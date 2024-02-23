@@ -1,0 +1,15 @@
+---
+import WhatsAppIcon from "../components/icons/whatsApp.astro";
+import { siteConfig } from "../config/site";
+---
+
+<a
+  target="_blank"
+  href=`https://wa.me/${siteConfig.phone}`
+  class="rounded-full bg-[#13A09B] px-8 py-1 relative text-white text-lg font-lobster cursor-pointer"
+>
+  ¡Me interesa!
+  <span class="absolute -top-4 -right-4 text-xs">
+    <WhatsAppIcon />
+  </span>
+</a>
