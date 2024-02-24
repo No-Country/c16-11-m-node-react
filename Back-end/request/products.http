@@ -3,7 +3,7 @@ GET http://localhost:8000/products/get
 
 
 ### get globos by id - for param - OK 
-GET http://localhost:8000/products/get/65d57afbd1b3a2e0bfdd
+GET http://localhost:8000/products/get/65d57a4dd1b3a2e0bfdd3bbc
 
 
 ### update available - ok
@@ -16,4 +16,4 @@ Content-Type: application/json
 }
 
 ### delete product by id
-DELETE http://localhost:8000/products/delete/
+DELETE http://localhost:8000/products/delete/65d57afbd1b3a2e0bfdd3bc0

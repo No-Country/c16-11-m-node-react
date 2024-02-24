@@ -1,5 +1,7 @@
 const Decoracion = require("../models/Detalles")
+const { uploadImage } = require("../utils.js/cloudinary.utils")
 const { makeSuccessResponse, makeErrorResponse } = require("../utils.js/response.utils")
+const fs = require('fs-extra')
 
 //faltan endpoint para actualizar los datos de productos globos
 
@@ -8,11 +10,29 @@ const createDecoracion = async (req, res, next) => {
     try {
         const { name, description, available, category_id } = req.body
 
-        const detalle = new Decoracion({ name, description, available, category_id })
+        const decoracion = new Decoracion({ name, description, available, category_id })
+
+        // Verificar si se adjuntó una imagen en la solicitud
+        if (req.files?.image) {
+            // Subir la imagen a Cloudinary y obtener el resultado
+            const result = await uploadImage(req.files.image.tempFilePath)
+
+            // Asignar el public_id y secure_url de la imagen al globo
+            decoracion.imagen = {
+                public_id: result.public_id,
+                secure_url: result.secure_url
+            }
+
+            // Eliminar el archivo temporal después de subirlo a Cloudinary
+            if (req.files.image.tempFilePath) {
+                await fs.unlink(req.files.image.tempFilePath);
+            }
+        }
+
         await detalle.save()
 
         res.status(201)
-        res.json(makeSuccessResponse(detalle))
+        res.json(makeSuccessResponse(decoracion))
     } catch (err) {
         next(err)
     }
@@ -45,12 +65,12 @@ const decoracionBySubCategory = async (req, res, next) => {
     try {
         const { id } = req.params
         if (!id) return res.status(400).json(makeErrorResponse("debe enviar un id por params"))
-        
-        const detalle = await Decoracion.find({ category_id: id })
+
+        const decoracion = await Decoracion.find({ category_id: id })
 
         if (!detalle) return res.status(400).json(makeErrorResponse("no existe la categoria"))
 
-        res.json(makeSuccessResponse(detalle))
+        res.json(makeSuccessResponse(decoracion))
     } catch (err) {
         next(err)
     }

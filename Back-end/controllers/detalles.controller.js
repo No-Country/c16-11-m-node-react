@@ -1,18 +1,38 @@
 const Detalles = require("../models/Detalles")
+const { uploadImage } = require("../utils.js/cloudinary.utils")
 const { makeSuccessResponse, makeErrorResponse } = require("../utils.js/response.utils")
+const fs = require('fs-extra')
 
 //faltan endpoint para actualizar los datos de productos Detalles
 
 //funcion para crear producto detalles
-const createDetalles = async(req, res, next) => {
+const createDetalles = async (req, res, next) => {
     try {
-            const { name, description, available, category_id } = req.body
-    
-            const detalle = new Detalles({ name, description, available, category_id })
-            await detalle.save()
-    
-            res.status(201)
-            res.json(makeSuccessResponse(detalle))
+        const { name, description, available, category_id } = req.body
+
+        const detalle = new Detalles({ name, description, available, category_id })
+
+        // Verificar si se adjuntó una imagen en la solicitud
+        if (req.files?.image) {
+            // Subir la imagen a Cloudinary y obtener el resultado
+            const result = await uploadImage(req.files.image.tempFilePath)
+
+            // Asignar el public_id y secure_url de la imagen al globo
+            detalle.imagen = {
+                public_id: result.public_id,
+                secure_url: result.secure_url
+            }
+
+            // Eliminar el archivo temporal después de subirlo a Cloudinary
+            if (req.files.image.tempFilePath) {
+                await fs.unlink(req.files.image.tempFilePath);
+            }
+        }
+        
+        await detalle.save()
+
+        res.status(201)
+        res.json(makeSuccessResponse(detalle))
     } catch (err) {
         next(err)
     }
@@ -56,7 +76,7 @@ const DetallesBySubCategory = async (req, res, next) => {
     }
 }
 
-module.exports =  {
+module.exports = {
     createDetalles,
     getDetalles,
     DetallesBySubCategory

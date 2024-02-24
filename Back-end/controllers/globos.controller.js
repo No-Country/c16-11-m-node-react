@@ -1,5 +1,7 @@
 const Globos = require("../models/Globos")
+const { uploadImage } = require("../utils.js/cloudinary.utils")
 const { makeSuccessResponse, makeErrorResponse } = require("../utils.js/response.utils")
+const fs = require('fs-extra')
 
 //faltan endpoint para actualizar los datos de productos globos
 
@@ -9,6 +11,24 @@ const createGlobos = async (req, res, next) => {
         const { name, description, available, subCategory_id } = req.body
 
         const globo = new Globos({ name, description, available, subCategory_id })
+
+        // Verificar si se adjuntó una imagen en la solicitud
+        if (req.files?.image) {
+            // Subir la imagen a Cloudinary y obtener el resultado
+            const result = await uploadImage(req.files.image.tempFilePath)
+
+            // Asignar el public_id y secure_url de la imagen al globo
+            globo.imagen = {
+                public_id: result.public_id,
+                secure_url: result.secure_url
+            }
+
+            // Eliminar el archivo temporal después de subirlo a Cloudinary
+            if (req.files.image.tempFilePath) {
+                await fs.unlink(req.files.image.tempFilePath);
+            }
+        }
+
         await globo.save()
 
         res.status(201)
@@ -45,8 +65,6 @@ const globosBySubCategory = async (req, res, next) => {
     try {
         const { id } = req.params
         if (!id) return res.status(400).json(makeErrorResponse("debe enviar un id por params"))
-
-        console.log(id)
 
         const globos = await Globos.find({ subCategory_id: id })
 
