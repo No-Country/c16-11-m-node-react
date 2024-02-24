@@ -1,5 +1,7 @@
-
 const Globos = require("../models/Globos")
+const { makeSuccessResponse, makeErrorResponse } = require("../utils.js/response.utils")
+
+//faltan endpoint para actualizar los datos de productos globos
 
 //funcion para crear producto globos
 const createGlobos = async (req, res, next) => {
@@ -10,17 +12,16 @@ const createGlobos = async (req, res, next) => {
         await globo.save()
 
         res.status(201)
-        res.json(globo)
+        res.json(makeSuccessResponse(globo))
     } catch (err) {
         next(err)
     }
 }
 
-
 //funcion para buscar globos por id o todos
 const getGlobos = async (req, res, next) => {
     try {
-        const { id } = req.query
+        const { id } = req.params
 
         let query = undefined
 
@@ -31,44 +32,9 @@ const getGlobos = async (req, res, next) => {
         }
 
         const response = await query.exec()
-        if (!response) return res.status(400).json({ message: "no existe el producto" })
 
-        res.json(response)
-    } catch (err) {
-        next(err)
-    }
-
-}
-
-//funcion para cambiar disponibilidad de available
-
-const updateAvailable = async (req, res, next) => {
-    try {
-        const { id, available } = req.body
-        const globo = await Globos.findById(id)
-
-        if (!globo) return res.status(400).json({ message: "no existe el producto" })
-
-        globo.available = available
-        globo.save()
-
-        res.json({ message: "disponibilidad actualizada", data: globo })
-
-    } catch (err) {
-        next(err)
-    }
-}
-
-//funcion para cambiar disponibilidad de available
-const deleteGlobo = async (req, res, next) => {
-    try {
-        const { id } = req.body
-
-        const globo = await Globos.findByIdAndDelete(id)
-
-        if (!globo) return res.status(400).json({ message: "no existe el producto" })
-
-        res.json(globo)
+        if (!response) return res.status(404).json(makeErrorResponse("no existe el producto"))
+        res.json(makeSuccessResponse(response))
     } catch (err) {
         next(err)
     }
@@ -77,11 +43,16 @@ const deleteGlobo = async (req, res, next) => {
 //funcion para traer todos los globos de una subcategoria
 const globosBySubCategory = async (req, res, next) => {
     try {
-        const { id } = req.body
+        const { id } = req.params
+        if (!id) return res.status(400).json(makeErrorResponse("debe enviar un id por params"))
+
+        console.log(id)
 
         const globos = await Globos.find({ subCategory_id: id })
 
-        res.json(globos)
+        if (!globos) return res.status(400).json(makeErrorResponse("no existe la categoria"))
+
+        res.json(makeSuccessResponse(globos))
     } catch (err) {
         next(err)
     }
@@ -90,7 +61,5 @@ const globosBySubCategory = async (req, res, next) => {
 module.exports = {
     createGlobos,
     getGlobos,
-    updateAvailable,
-    deleteGlobo,
     globosBySubCategory
 }

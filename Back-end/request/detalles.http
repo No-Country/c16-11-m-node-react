@@ -1,0 +1,22 @@
+### create Detalles
+POST  http://localhost:8000/globos/crear
+Content-Type: application/json
+
+{
+    "name": "lunares",
+    "description": "description 2",
+    "category_id": "65d554a440c36abe29c885ed"
+}
+
+### get all Detalles
+GET http://localhost:8000/detalles/get
+
+### get Detalles by id - OK 
+GET http://localhost:8000/detalles/get?id=65d57af3d1b3a2e0bfdd3bbe
+
+### get Detalles by id - WRON
+GET http://localhost:8000/detalles/get?id=65d57af3d1b3a2e0bfd
+
+
+### get Detalles for category - ok
+GET http://localhost:8000/detalles/globosBySubCategory/65d558e340c36abe29c885f5

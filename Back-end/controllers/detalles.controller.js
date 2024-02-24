@@ -1,28 +1,27 @@
 const Detalles = require("../models/Detalles")
+const { makeSuccessResponse, makeErrorResponse } = require("../utils.js/response.utils")
 
+//faltan endpoint para actualizar los datos de productos Detalles
 
 //funcion para crear producto detalles
 const createDetalles = async(req, res, next) => {
     try {
-        try {
             const { name, description, available, category_id } = req.body
     
             const detalle = new Detalles({ name, description, available, category_id })
             await detalle.save()
     
             res.status(201)
-            res.json(detalle)
-        } catch (err) {
-            next(err)
-        }
+            res.json(makeSuccessResponse(detalle))
     } catch (err) {
         next(err)
     }
 }
+
 //funcion para buscar Detalles por id o todos
 const getDetalles = async (req, res, next) => {
     try {
-        const { id } = req.query
+        const { id } = req.params
 
         let query = undefined
 
@@ -33,24 +32,9 @@ const getDetalles = async (req, res, next) => {
         }
 
         const response = await query.exec()
-        if (!response) return res.status(400).json({ message: "no existe el producto" })
+        if (!response) return res.status(400).json(makeErrorResponse("no existe el producto"))
 
-        res.json(response)
-    } catch (err) {
-        next(err)
-    }
-}
-
-//funcion para cambiar disponibilidad de available
-const deleteDetalle = async (req, res, next) => {
-    try {
-        const { id } = req.body
-
-        const detalle = await Globos.findByIdAndDelete(id)
-
-        if (!detalle) return res.status(400).json({ message: "no existe el producto" })
-
-        res.json(detalle)
+        res.json(makeSuccessResponse(response))
     } catch (err) {
         next(err)
     }
@@ -60,24 +44,20 @@ const deleteDetalle = async (req, res, next) => {
 const DetallesBySubCategory = async (req, res, next) => {
     try {
         const { id } = req.body
+        if (!id) return res.status(400).json(makeErrorResponse("debe enviar un id por params"))
 
-        const detalle = await Detalles.find({ subCategory_id: id })
+        const detalle = await Detalles.find({ category_id: id })
 
-        res.json(detalle)
+        if (!detalles) return res.status(400).json(makeErrorResponse("no existe la categoria"))
+
+        res.json(makeSuccessResponse(detalle))
     } catch (err) {
         next(err)
     }
 }
 
-
-
-
 module.exports =  {
     createDetalles,
     getDetalles,
-    deleteDetalle,
     DetallesBySubCategory
 }
-
-
-

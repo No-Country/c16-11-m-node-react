@@ -6,12 +6,11 @@ Content-Type: application/json
     "name":"figuras"
 }
 
-### get category by ID for query
-GET http://localhost:8000/category?id=65d6bee79c3efb921a
-
 ### get all category
-GET http://localhost:8000/category
+GET http://localhost:8000/category/get
 
+### get category by ID for query
+GET http://localhost:8000/category/get/65d5548740c36abe29c885eb
 
 ### create subCategory
 POST http://localhost:8000/category/create-subCategory
@@ -26,12 +25,7 @@ Content-Type: application/json
 GET  http://localhost:8000/category/subCategory
 
 ### get subCategory by id
-GET  http://localhost:8000/category/subCategory?id=65d543547b3fe2a6049d19aa
+GET  http://localhost:8000/category/subCategory/65d558c840c36abe29c885f1
 
 ### get all subCategory by category
-GET  http://localhost:8000/category/subCategoryByCategory
-Content-Type: application/json
-
-{
-    "catId":"65d5548740c36abe29c88"
-}
+GET  http://localhost:8000/category/subCategoryByCategory/65d5548740c36abe29c885eb

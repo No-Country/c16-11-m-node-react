@@ -3,7 +3,7 @@ POST  http://localhost:8000/globos/crear
 Content-Type: application/json
 
 {
-    "name": "",
+    "name": "lunares",
     "description": "description 2",
     "subCategory_id": "65d554a440c36abe29c885ed"
 }
@@ -17,27 +17,6 @@ GET http://localhost:8000/globos/get?id=65d57af3d1b3a2e0bfdd3bbe
 ### get globos by id - WRON
 GET http://localhost:8000/globos/get?id=65d57af3d1b3a2e0bfd
 
-### update available - ok
-PATCH   http://localhost:8000/globos/product-available
-Content-Type: application/json
-
-{
-    "id":"65d57a4dd1b3a2e0bfdd3bbc",
-    "available": true
-}
 
 ### get globos for category - ok
-GET http://localhost:8000/globos/globosBySubCategory
-Content-Type: application/json
-
-{
-    "id":"65d558e340c36abe29c885f5"
-}
-
-### update available - ok
-DELETE http://localhost:8000/globos/delete
-Content-Type: application/json
-
-{
-    "id":"65d6deb69d1b431d79f374db"
-}
+GET http://localhost:8000/globos/globosBySubCategory/65d558e340c36abe29c885f5

@@ -1,5 +1,9 @@
 const Categoria = require("../models/Categorias")
 const SubCategoria = require("../models/SubCategorias")
+const { makeSuccessResponse, makeErrorResponse } = require("../utils.js/response.utils")
+
+//faltan los endpoint para eliminar categoria y subcategoria
+//faltan los endpoint para actualizar datos de categoria y subcategoria
 
 //crear categoria
 const createCategory = async (req, res, next) => {
@@ -11,7 +15,7 @@ const createCategory = async (req, res, next) => {
         await category.save()
 
         res.status(201)
-        res.json(category)
+        res.json(makeSuccessResponse(category))
 
     } catch (err) {
         next(err)
@@ -22,7 +26,7 @@ const createCategory = async (req, res, next) => {
 const getCategory = async (req, res, next) => {
     try {
         
-        const { id } = req.query
+        const { id } = req.params
         let query = undefined
     
         if (id !== undefined) {
@@ -33,48 +37,34 @@ const getCategory = async (req, res, next) => {
     
         const response = await query.exec()
 
-        if (!response) return res.status(404).json({ message: "no existe la categoria" })
+        if (!response) return res.status(404).json(makeErrorResponse("no existe la categoria") )
     
-        res.json(response)
+        res.json(makeSuccessResponse(response))
     
     } catch (err) {
         next(err)
     }
 }
-
-//buscar subcategoria con id de categorias
-const getsubCategoryByCategory = async (req, res, next) => {
-    try {
-        const { catId } = req.body
-    
-        const categoria = await Categoria.findById(catId)
-        const subCategoria = await SubCategoria.find({ categoryId: catId })
-    
-        res.json(subCategoria)
-    } catch (err) {
-        next(err)
-    }
-}
-
 
 //crear subCategoria
 const createSubcategory = async (req, res, next) => {
     try {
         const { name, categoryId } = req.body
         const subcategory = new SubCategoria({ name, categoryId })
-    
+        
         await subcategory.save()
         res.status(201)
-        res.json(subcategory)
+        res.json(makeSuccessResponse(subcategory))
     } catch (err) {
         next(err)
     }
 }
 
 //buscar subCategoria/s
-const getSubCategory = async (req, res) => {
+const getSubCategory = async (req, res, next) => {
     try {
-        const { id } = req.query
+        const { id } = req.params
+
         let query = undefined
     
         if (id !== undefined) {
@@ -85,14 +75,26 @@ const getSubCategory = async (req, res) => {
     
         const response = await query.exec()
         
-        if (!response) return res.status(404).json({ message: "no existe la subcategoria" })
-        res.json(response)
+        if (!response) return res.status(404).json(makeErrorResponse("no existe la subcategoria") )
+        res.json(makeSuccessResponse(response))
     } catch (err) {
         next(err)
     }
 }
 
-
+//buscar subcategoria con id de categorias
+const getsubCategoryByCategory = async (req, res, next) => {
+    try {
+        const { id } = req.params
+    
+        const categoria = await Categoria.findById(id)
+        const subCategoria = await SubCategoria.find({ categoryId: id })
+    
+        res.json(makeSuccessResponse(subCategoria))
+    } catch (err) {
+        next(err)
+    }
+}
 
 module.exports = {
     createCategory,

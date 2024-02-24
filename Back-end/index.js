@@ -1,15 +1,19 @@
 const express = require('express')
 const { default: mongoose } = require('mongoose')
+const morgan = require('morgan')
 const { EXPRESS_CONFIG, MONGO_CONFIG } = require('./config')
 const { categoryRouter } = require('./routes/categories.router')
 const { globoRouter } = require('./routes/globos.router')
+const { productRouter } = require('./routes/products.router')
 
 const app = express()
 
 app.use(express.json())
+app.use(morgan('dev'))
 
 app.use('/globos', globoRouter)
 app.use('/category', categoryRouter)
+app.use('/products', productRouter)
 
 //coneccion a base de datos mongo
 mongoose.connect(MONGO_CONFIG.URI)

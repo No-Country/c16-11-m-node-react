@@ -1,0 +1,19 @@
+### get all products
+GET http://localhost:8000/products/get
+
+
+### get globos by id - for param - OK 
+GET http://localhost:8000/products/get/65d57afbd1b3a2e0bfdd
+
+
+### update available - ok
+PATCH http://localhost:8000/products/available-product
+Content-Type: application/json
+
+{
+    "id":"65d57afbd1b3a2e0bfdd3bc0",
+    "available": true
+}
+
+### delete product by id
+DELETE http://localhost:8000/products/delete/

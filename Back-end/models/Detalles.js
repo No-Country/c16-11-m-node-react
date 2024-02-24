@@ -2,7 +2,7 @@ const { Schema } = require("mongoose");
 const Product = require("./Products");
 
 const Detalles = Product.discriminator('Detalles', new Schema({
-    available: { type: Boolean, default: false },
+    peso: { type: Number },
     category_id: { type: Schema.Types.ObjectId, ref: 'Categoria' }
 }))
 
