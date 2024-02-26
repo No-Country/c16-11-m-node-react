@@ -2,11 +2,14 @@
 interface Props {
   imagePath: string
 }
+
+const { imagePath } = Astro.props
 ---
 
-<div class="card">
-  <img src="{imagePath}" alt="Producto 1">
-</div>
+<article class="card"> 
+  <img class="" src={imagePath} alt="Producto 1">
+  
+</article>
 
 <style>
   .card {
