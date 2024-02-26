@@ -2,15 +2,112 @@
 import Section from "../components/section.astro";
 import { siteConfig } from "../config/site";
 import Layout from "../layouts/Layout.astro";
+import Listofcards from "../components/listofcards.astro"
+import Hero from "../components/hero.astro"
+import Title from "../components/title.astro"
+import Espec from "../components/espec.astro"
+import Review from "../components/review.astro"
+import Footer from "../components/footer.astro"
 ---
 
 <Layout title={siteConfig.name}>
   <main>
-    <Section
-      title="Productos destacados"
-      description="Astro is a new kind of static site builder that delivers lightning-fast performance with a modern developer experience."
-      bgColor="bg-[#F1C9CF]"
-      titleColor="text-[#E670A1]"
-    />
+    <div>
+      <h2>
+        ¡Descubre las mejores ideas para decorar tus eventos con globos!
+      </h2>
+    </div>
+    <Section>
+      <Title>
+        Productos destacados
+      </Title>
+      <Hero/>
+      <Listofcards />
+      <Espec />
+    </Section>
+
+    <Section>
+      <Title>
+        Ofertas del Mes
+      </Title>
+      <Hero/>
+      <Listofcards />
+
+    </Section>
+
+    <Section>
+      <Title>
+        Novedades de la semana
+      </Title>
+      <Hero/>
+      <Listofcards />
+    </Section>
+
+    <Section>
+      <Title>
+        Decoración para Empresas
+      </Title>
+      <img src="" alt="">
+    </Section>
+
+    <Section>
+      <Title>
+        Descripción
+      </Title>
+      <Listofcards />
+    </Section>
+
+    <Section>
+      <Title>
+        Reseña de nuestros Clientes, amigos y familiares
+      </Title>
+      <Review 
+        avatar="photos/producto2.png"                               
+        name="Aleja"
+        quote="Lorem ipsum dolor sit amet consectetur. Imperdiet lacinia vulputate sed a velit felis in sed cursus. Urna fermentum et elementum venenatis pretium fringilla lacinia id fames."/>
+    </Section>
+
+    <Section>
+      <Title>
+        Marcas que colaboran con Nosotros
+      </Title>
+      // TODO: poner imagenes de logo de marcas
+    </Section>
+
+    <Section>
+      <Title>
+        sobre Nosotros
+      </Title>
+      <p>
+        Bienvenidos a detalles Luna, Especializados en decoraciones con globos
+      </p>
+      // TODO: poner imagenes de logo de marcas
+    </Section>
+
+    <Section>
+      <Title>
+        Nuestra Nueva Tienda
+      </Title>
+      // TODO: poner 3 imagenes
+      // TODO: 3 descripciones
+    </Section>
+
+    <Section>
+      <Title>
+        Nuestra Filosofía De Vida Son Los Globos
+      </Title>
+      // TODO: poner 3 imagenes
+      // TODO: 3 descripciones
+    </Section>
+
+    <Section>
+      <Title>
+        ¿Dónde Nos puedes Encontrar?
+      </Title>
+      // TODO: poner 3 imagenes
+      // TODO: 3 descripciones
+    </Section>
   </main>
+  <Footer />
 </Layout>
+

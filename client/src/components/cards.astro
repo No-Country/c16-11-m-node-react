@@ -1,0 +1,19 @@
+---
+interface Props {
+  imagePath: string
+}
+
+const { imagePath } = Astro.props
+---
+
+<article class="card"> 
+  <img class="" src={imagePath} alt="Producto 1">
+  
+</article>
+
+<style>
+  .card {
+    width: 424px;
+    height: auto;
+  }
+</style>

@@ -29,12 +29,12 @@
     </div>
     <div class="menu">
       <ul>
-        <li><a href="#">Decoración</a></li>
-        <li><a href="#">Globos</a></li>
-        <li><a href="#">Detalles</a></li>
+        <li><a href="/decoracion">Decoración</a></li>
+        <li><a href="/globos">Globos</a></li>
+        <li><a href="/detalles">Detalles</a></li>
         <li><a href="#">Empresas</a></li>
         <li><a href="#">Sobre Nosotros</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="#" class="last-menu-item">Contacto</a></li>
         <li>
           <img src="/icons/megusta.png" alt="Me gusta" class="social-icon" />
         </li>
@@ -79,6 +79,7 @@
   .phone img {
     width: 30px;
     margin-right: 5px;
+    color: #0e877d;
   }
 
   .phone .phone-number {
@@ -109,7 +110,7 @@
     border: none;
     outline: none;
     width: 200px;
-    padding: 5px;
+    padding: 2px;
     border-radius: 20px;
   }
 
@@ -134,8 +135,8 @@
 
   .social-icon {
     width: 40px;
-    color: #e95090;
-    margin-top: -25px;
+    color: #f6cfdf;
+    margin-top: 0px;
   }
 
   .white-section {
@@ -143,21 +144,24 @@
   }
 
   .logo img {
-    height: 250px;
-    width: auto;
+    margin: 0 auto;
   }
 
   .menu ul {
     list-style-type: none;
     display: flex;
-    gap: 20px;
+    gap: 70px;
     justify-content: center;
+    border-bottom: 1px solid #0e877d;
   }
 
   .menu li a {
-    font-size: 20px;
-    font-family: "Arial Narrow", sans-serif;
+    font-size: 25px;
+    font-family: "Lobster Two", system-ui;
     text-decoration: none;
-    color: #333;
+    color: #0e877d;
+  }
+  .menu li a.last-menu-item {
+    color: #e670a1;
   }
 </style>

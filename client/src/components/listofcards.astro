@@ -1,0 +1,24 @@
+---
+import Card from "./cards.astro"
+---
+
+<div class="list-of-cards">
+  <h2>Productos relacionados</h2>
+  <div class="cards-container">
+  <Card imagePath="/public/photos/producto1.png" />
+  <Card imagePath="/public/photos/producto2.png" />
+  <Card imagePath="/public/photos/producto3.png" />
+  </div>
+</div>
+
+<style>
+  .list-of-cards {
+    width: 1338px;
+    height: 522px;
+  }
+
+  .cards-container {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
