@@ -2,6 +2,7 @@
 import Section from "../components/section.astro";
 import { siteConfig } from "../config/site";
 import Layout from "../layouts/Layout.astro";
+import Listofcards from "../components/listofcards.astro"
 ---
 
 <Layout title={siteConfig.name}>
@@ -12,5 +13,6 @@ import Layout from "../layouts/Layout.astro";
       bgColor="bg-[#F1C9CF]"
       titleColor="text-[#E670A1]"
     />
+    <Listofcards />
   </main>
 </Layout>
