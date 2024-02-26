@@ -15,7 +15,7 @@ GET http://localhost:8000/globos/get
 GET http://localhost:8000/globos/get?id=65d57af3d1b3a2e0bfdd3bbe
 
 ### get globos by id - WRON
-GET http://localhost:8000/globos/get?id=65d57af3d1b3a2e0bfd
+GET http://localhost:8000/globos/get?id=65d57af3d1
 
 
 ### get globos for category - ok

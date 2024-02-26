@@ -34,5 +34,5 @@ mongoose.connect(MONGO_CONFIG.URI)
     .catch(() => console.log({ message: 'base de datos NO conectada' }))
 
 // Iniciar el servidor Express y escuchar en el puerto especificado en la configuración
-app.listen(EXPRESS_CONFIG.PORT,
+app.listen(EXPRESS_CONFIG.PORT || 3000,
     () => console.log("app listening to port", EXPRESS_CONFIG.PORT))
