@@ -6,6 +6,8 @@ const morgan = require('morgan')
 const { EXPRESS_CONFIG, MONGO_CONFIG } = require('./config')
 // Importar los enrutadores de las rutas de la aplicación
 const { categoryRouter } = require('./routes/categories.router')
+const { decoracionRouter } = require('./routes/decoraciones.router')
+const { detallesRouter } = require('./routes/detalles.router')
 const { globoRouter } = require('./routes/globos.router')
 const { productRouter } = require('./routes/products.router')
 
@@ -24,9 +26,20 @@ app.use(fileUpload({
 }))
 
 // Asignar las rutas de los enrutadores a las rutas de la aplicación
-app.use('/globos', globoRouter)
-app.use('/category', categoryRouter)
+//https://c16-11-m-node-react-3.onrender.com/products/get
 app.use('/products', productRouter)
+
+//https://c16-11-m-node-react-3.onrender.com/category/get
+app.use('/category', categoryRouter)
+
+//https://c16-11-m-node-react-3.onrender.com/decoraciones/get
+app.use('/decoraciones', decoracionRouter)
+
+//https://c16-11-m-node-react-3.onrender.com/globos/get
+app.use('/globos', globoRouter)
+
+//https://c16-11-m-node-react-3.onrender.com/detalles/get
+app.use('/detalles', detallesRouter)
 
 // Conectar a la base de datos MongoDB utilizando la URI proporcionada
 mongoose.connect(MONGO_CONFIG.URI)

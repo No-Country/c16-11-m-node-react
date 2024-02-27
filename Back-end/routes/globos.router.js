@@ -1,6 +1,6 @@
 const { createGlobos, getGlobos, globosBySubCategory } = require('../controllers/globos.controller')
 const { errorMiddleware, validateIdParams } = require('../middlewares/common.middleware')
-const { validateGloboData, validateBodyMongoId } = require('../middlewares/globos.middlewares')
+const { validateGloboData } = require('../middlewares/globos.middlewares')
 const globoRouter = require('express').Router()
 
 //enrutador para crear producto globos
