@@ -1,24 +1,75 @@
 ---
-import Card from "./cards.astro"
+import Card from "./cards.astro";
 ---
 
 <div class="list-of-cards">
   <h2>Productos relacionados</h2>
-  <div class="cards-container">
-  <Card imagePath="/public/photos/producto1.png" />
-  <Card imagePath="/public/photos/producto2.png" />
-  <Card imagePath="/public/photos/producto3.png" />
+    <div class="cards-container">
+      <div>
+        <Card imagePath="/photos/producto1.png" />
+        <p class="card-name">Producto 1</p>
+      </div>
+      <div>
+        <Card imagePath="/photos/producto2.png" />
+        <p class="card-name">Producto 2</p>
+      </div>
+      <div>
+        <Card imagePath="/photos/producto3.png" />
+        <p class="card-name">Producto 3</p>
+      </div>
+    </div>
+    <div class="button-container"><button class="button">Ver más...</button></div>
   </div>
 </div>
 
 <style>
   .list-of-cards {
-    width: 1338px;
-    height: 522px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2%;
+    position: relative;
+  }
+
+  .list-of-cards h2 {
+    font-family: "Lobster Two", system-ui;
+    font-size: 28px;
+    color: #11a4ee;
+    font-weight: bold;
+    margin-bottom: 20px;
   }
 
   .cards-container {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 80px;
+    width: 100%;
+  }
+
+  .card-name {
+    text-align: center;
+    font-family: "Lobster Two", system-ui;
+    font-size: 18px;
+    color: #636b78;
+  }
+
+  .button-container {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    right: 0%;
+  }
+
+  .button {
+    width: 150px;
+    background-color: #d1d4d6;
+    color: #495057;
+    font-family: "Lobster Two", system-ui;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 25px;
+    cursor: pointer;
   }
 </style>

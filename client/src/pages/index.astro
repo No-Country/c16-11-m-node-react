@@ -8,18 +8,20 @@ import Title from "../components/title.astro"
 import Espec from "../components/espec.astro"
 import Review from "../components/review.astro"
 import Footer from "../components/footer.astro"
+
 ---
+
 
 <Layout title={siteConfig.name}>
   <main>
-    <div>
-      <h2>
+    <div class="hero-container">
+      <h2 class="h2">
         ¡Descubre las mejores ideas para decorar tus eventos con globos!
       </h2>
     </div>
     <Section>
       <Title>
-        Productos destacados
+        Productos Destacados
       </Title>
       <Hero/>
       <Listofcards />
@@ -32,7 +34,7 @@ import Footer from "../components/footer.astro"
       </Title>
       <Hero/>
       <Listofcards />
-
+      <Espec />
     </Section>
 
     <Section>
@@ -111,3 +113,23 @@ import Footer from "../components/footer.astro"
   <Footer />
 </Layout>
 
+<style>
+  .hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh; 
+    max-width: 90%;
+    margin: auto;
+    margin-bottom: -5%;
+  }
+
+  .h2 {
+    font-family: "Lobster Two", system-ui;
+    font-size: 35px;
+    color: #ff87ab;
+    text-align: center; 
+    max-width: 100%;
+    margin: auto;
+  }
+</style>
