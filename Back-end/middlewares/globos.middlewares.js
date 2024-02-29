@@ -13,6 +13,17 @@ const validateGloboData = [
     requestValidation
 ]
 
+const validateDecoData = [
+    body('name').notEmpty().withMessage('el nombre del producto es requerido'),
+    body('name').isString().withMessage('el nombre del producto debe ser añfabetico'),
+    body('description').notEmpty().withMessage('la descripcion del producto es requerido'),
+    body('description').isString().withMessage('la descripcion del producto debe ser añfabetico'),
+    body('available').optional().isBoolean().withMessage('la disponibilidad debe ser booleano'),
+    body('category_id').notEmpty().withMessage('el id de la categoria del producto es requerida'),
+    body('category_id').isMongoId().withMessage('el id de la categoria del producto debe ser formato mongo'),
+    requestValidation
+]
+
 
 // Middleware para validar los datos de la categoría - se repite en categorias con distinto mensaje
 const validateBodyMongoId = [
@@ -23,5 +34,6 @@ const validateBodyMongoId = [
 
 module.exports ={
     validateGloboData,
-    validateBodyMongoId
+    validateBodyMongoId, 
+    validateDecoData
 }

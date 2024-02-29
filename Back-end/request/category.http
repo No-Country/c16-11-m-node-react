@@ -3,7 +3,7 @@ POST http://localhost:8000/category/create-category
 Content-Type: application/json
 
 {
-    "name":"Complementos"
+    "name":"Figuras"
 }
 
 ### get all category
@@ -12,20 +12,25 @@ GET http://localhost:8000/category/get
 ### get category by ID for query
 GET http://localhost:8000/category/get/65d5548740c36abe29c885eb
 
-### create subCategory
+### create subCategory (solo globos)
 POST http://localhost:8000/category/create-subCategory
 Content-Type: application/json
 
 {
-    "name":"Globos Decorativos",
-    "categoryId":"65dfd6f77b09110901ae1ec1"
+    "name":"En Varilla",
+    "categoryId":"65d554a440c36abe29c885ed"
 }
 
-### get all subCategory
+### get all subCategory (solo globos)
 GET  http://localhost:8000/category/subCategory
 
-### get subCategory by id
+### get subCategory by id (solo globos)
 GET  http://localhost:8000/category/subCategory/65d558c840c36abe29c885f1
 
-### get all subCategory by category
+### get all subCategory by category (solo globos)
 GET  http://localhost:8000/category/subCategoryByCategory/65dfd6f77b09110901ae1ec1
+
+### get all Globos by subCategory(solo globos)
+GET  http://localhost:8000/category/subCategory/65d558c840c36abe29c885f1
+
+ 

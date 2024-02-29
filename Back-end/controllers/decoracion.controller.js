@@ -3,9 +3,9 @@ const { uploadImage } = require("../utils.js/cloudinary.utils")
 const { makeSuccessResponse, makeErrorResponse } = require("../utils.js/response.utils")
 const fs = require('fs-extra')
 
-//faltan endpoint para actualizar los datos de productos globos
+//faltan endpoint para actualizar los datos de productos decoraciones
 
-//funcion para crear producto detalles
+//funcion para crear producto deecoraciones
 const createDecoracion = async (req, res, next) => {
     try {
         const { name, description, available, etiqueta, category_id } = req.body
@@ -29,7 +29,7 @@ const createDecoracion = async (req, res, next) => {
             }
         }
 
-        await detalle.save()
+        await decoracion.save()
 
         res.status(201)
         res.json(makeSuccessResponse(decoracion))
@@ -38,7 +38,7 @@ const createDecoracion = async (req, res, next) => {
     }
 }
 
-//funcion para buscar Detalles por id o todos
+//funcion para buscar Decoraciones por id o todos
 const getDecoracion = async (req, res, next) => {
     try {
         const { id } = req.params
@@ -60,7 +60,7 @@ const getDecoracion = async (req, res, next) => {
     }
 }
 
-//funcion para traer todos los globos de una subcategoria
+//funcion para traer todos las decoraciones de una categoria
 const decoracionBySubCategory = async (req, res, next) => {
     try {
         const { id } = req.params
@@ -68,7 +68,7 @@ const decoracionBySubCategory = async (req, res, next) => {
 
         const decoracion = await Decoracion.find({ category_id: id })
 
-        if (!detalle) return res.status(400).json(makeErrorResponse("no existe la categoria"))
+        if (!decoracion) return res.status(400).json(makeErrorResponse("no existe la categoria"))
 
         res.json(makeSuccessResponse(decoracion))
     } catch (err) {

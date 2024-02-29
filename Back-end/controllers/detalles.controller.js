@@ -60,7 +60,7 @@ const getDetalles = async (req, res, next) => {
     }
 }
 
-//funcion para traer todos los globos de una subcategoria
+//funcion para traer todos los detalles de una categoria
 const DetallesBySubCategory = async (req, res, next) => {
     try {
         const { id } = req.body

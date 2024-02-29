@@ -32,7 +32,10 @@ Content-Type: application/json
 GET http://localhost:8000/products/etiquetas?label=ofertas
 
 ###novedades
-GET http://localhost:8000/products/etiquetas?label=ofertas
+GET http://localhost:8000/products/etiquetas?label=novedades
 
 ###destacados
-GET http://localhost:8000/products/etiquetas?label=ofertas
+GET http://localhost:8000/products/etiquetas?label=destacados
+
+###destacados
+GET http://localhost:8000/products/etiquetas?label=none

@@ -7,7 +7,7 @@ Content-Type: application/json
     "description": "Globo Buuble de La Sirenita transparente 22 (56 cm)",
     "available":true,
     "etiqueta":"ofertas",
-    "subCategory_id": "65d558e340c36abe29c885f5"
+    "subCategory_id": "65e003cd04819b6fc3435c3d"
 }
 
 ### get all globos
@@ -20,5 +20,49 @@ GET http://localhost:8000/globos/get/65d57af3d1b3a2e0bfdd3bbe
 GET http://localhost:8000/globos/get/65d57af3d1
 
 
-### get globos for category - ok
-GET http://localhost:8000/globos/globosBySubCategory/65d554a440c36abe29c885ed
+### get globos for SubCategory - ok
+
+###-----------------------------LICENCIADOS-----------------------------------
+
+### LICENCIADOS - GLOBOS BEBE
+GET http://localhost:8000/globos/globosBySubCategory/65e003cd04819b6fc3435c3d
+
+### LICENCIADOS - DISNEY
+GET http://localhost:8000/globos/globosBySubCategory/65d558e340c36abe29c885f5
+
+### LICENCIADOS - STARS WARS
+GET http://localhost:8000/globos/globosBySubCategory/65d558dc40c36abe29c885f3
+
+### LICENCIADOS - SUPERHEROES
+GET http://localhost:8000/globos/globosBySubCategory/65dfd8e37b09110901ae1ed5
+
+### LICENCIADOS - VIDEOJUEGOS
+GET http://localhost:8000/globos/globosBySubCategory/65dfd9007b09110901ae1ed7
+
+###-----------------------------TEMATICOS-----------------------------------
+
+### TEMATICOS - GLOBO BEBE
+GET http://localhost:8000/globos/globosBySubCategory/65d558c840c36abe29c885f1
+
+### TEMATICOS - BODA
+GET http://localhost:8000/globos/globosBySubCategory/65d5595240c36abe29c885f9
+
+### TEMATICOS - CELEBRACIONES
+GET http://localhost:8000/globos/globosBySubCategory/65dfd7fe7b09110901ae1ec8
+
+### TEMATICOS - EN VARILLA
+GET http://localhost:8000/globos/globosBySubCategory/65dfd80a7b09110901ae1eca
+
+### TEMATICOS - INFANTILES
+GET http://localhost:8000/globos/globosBySubCategory/65dfd81e7b09110901ae1ece
+
+###-----------------------------COMPLEMENTOS-----------------------------------
+
+### COMPLEMENTOS - CENTRO DE MESA
+GET http://localhost:8000/globos/globosBySubCategory/65dfd9507b09110901ae1ee0
+
+### COMPLEMENTOS - CONTRAPESO
+GET http://localhost:8000/globos/globosBySubCategory/65dfd9f17b09110901ae1ee4
+
+### COMPLEMENTOS - GLOBOS DECORATIVOS
+GET http://localhost:8000/globos/globosBySubCategory/65dfddce7b09110901ae1eec

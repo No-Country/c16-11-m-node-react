@@ -1,0 +1,34 @@
+### create Decoraciones
+POST  http://localhost:8000/decoraciones/crear
+Content-Type: application/json
+
+{
+    "name": "lunares",
+    "description": "Globo Buuble de La Sirenita transparente 22 (56 cm)",
+    "available":true,
+    "etiqueta":"ofertas",
+    "subCategory_id": "65e003cd04819b6fc3435c3d"
+}
+
+### get all decoraciones
+GET http://localhost:8000/decoraciones/get
+
+### get decoraciones by id - OK 
+GET http://localhost:8000/decoraciones/get/65d57af3d1b3a2e0bfdd3bbe
+
+### get decoraciones by id - WRON
+GET http://localhost:8000/decoraciones/get/65d57af3d1
+
+
+### get decoraciones for Category - ok
+
+###------------------------------FIGURAS---------------------------------
+GET http://localhost:8000/decoraciones/globosBySubCategory/65d6bf0e9c3efb921d7aa923
+
+
+###-------------------------------ARCOS----------------------------------
+GET http://localhost:8000/decoraciones/globosBySubCategory/65d6bf069c3efb921d7aa921
+
+
+###-----------------------------PhotoCall--------------------------------
+GET http://localhost:8000/decoraciones/globosBySubCategory/65d6bee79c3efb921d7aa91f
