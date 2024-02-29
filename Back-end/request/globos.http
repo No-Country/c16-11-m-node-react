@@ -4,19 +4,21 @@ Content-Type: application/json
 
 {
     "name": "lunares",
-    "description": "description 2",
-    "subCategory_id": "65d554a440c36abe29c885ed"
+    "description": "Globo Buuble de La Sirenita transparente 22 (56 cm)",
+    "available":true,
+    "etiqueta":"ofertas",
+    "subCategory_id": "65d558e340c36abe29c885f5"
 }
 
 ### get all globos
 GET http://localhost:8000/globos/get
 
 ### get globos by id - OK 
-GET http://localhost:8000/globos/get?id=65d57af3d1b3a2e0bfdd3bbe
+GET http://localhost:8000/globos/get/65d57af3d1b3a2e0bfdd3bbe
 
 ### get globos by id - WRON
-GET http://localhost:8000/globos/get?id=65d57af3d1
+GET http://localhost:8000/globos/get/65d57af3d1
 
 
 ### get globos for category - ok
-GET http://localhost:8000/globos/globosBySubCategory/65d558e340c36abe29c885f5
+GET http://localhost:8000/globos/globosBySubCategory/65d554a440c36abe29c885ed

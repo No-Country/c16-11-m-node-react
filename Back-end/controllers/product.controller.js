@@ -56,10 +56,23 @@ const deleteProduct = async (req, res, next) => {
     }
 }
 
+// funcion para actualizar etiqueta de producto. ejemp: "novedades", "ofertas", "destacados".
+const updateLabelProduct = async (req, res, next) => {
+    try {
+        const { id ,label } = req.body
+        const products = await Product.findByIdAndUpdate(id,{etiqueta: label})
+    
+        if (!products) return res.status(400).json(makeErrorResponse("no existe la etiqueta"))
+        res.json(makeSuccessResponse(products))
+    } catch (err) {
+        next(err)
+    }
+}
+
 // funcion para traer productos segun su etiqueta . ejemp: "novedades", "ofertas", "destacados".
 const getLabelProduct = async (req, res, next) => {
     try {
-        const { label } = req.body
+        const { label } = req.query
         const products = await Product.find({etiqueta: label})
     
         if (!products) return res.status(400).json(makeErrorResponse("no existe la etiqueta"))
@@ -73,6 +86,7 @@ module.exports = {
     updateProductAvailable,
     deleteProduct,
     getProducts,
-    getLabelProduct
+    getLabelProduct,
+    updateLabelProduct
 }
 

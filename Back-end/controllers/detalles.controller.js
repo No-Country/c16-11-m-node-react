@@ -8,9 +8,9 @@ const fs = require('fs-extra')
 //funcion para crear producto detalles
 const createDetalles = async (req, res, next) => {
     try {
-        const { name, description, available, category_id } = req.body
+        const { name, description, available, etiqueta, category_id } = req.body
 
-        const detalle = new Detalles({ name, description, available, category_id })
+        const detalle = new Detalles({ name, description, available, etiqueta, category_id })
 
         // Verificar si se adjuntó una imagen en la solicitud
         if (req.files?.image) {
@@ -28,7 +28,7 @@ const createDetalles = async (req, res, next) => {
                 await fs.unlink(req.files.image.tempFilePath);
             }
         }
-        
+
         await detalle.save()
 
         res.status(201)

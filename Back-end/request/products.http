@@ -2,7 +2,7 @@
 GET http://localhost:8000/products/get
 
 
-### get globos by id - for param - OK 
+### get product by id - for param - OK 
 GET http://localhost:8000/products/get/65d57a4dd1b3a2e0bfdd3bbc
 
 
@@ -16,4 +16,23 @@ Content-Type: application/json
 }
 
 ### delete product by id
-DELETE http://localhost:8000/products/delete/65d57afbd1b3a2e0bfdd3bc0
+DELETE http://localhost:8000/products/delete/65d9ef35290077066eb0bd80
+
+### update etiquetas - ok [ofertas , novedades , destacados]
+PATCH http://localhost:8000/products/etiquetas/patch
+Content-Type: application/json
+
+{
+    "id":"65dfe52785b383a69904662e",
+    "label": "ofertas"
+}
+
+### get product by etiqueta - for query - OK 
+###ofertas
+GET http://localhost:8000/products/etiquetas?label=ofertas
+
+###novedades
+GET http://localhost:8000/products/etiquetas?label=ofertas
+
+###destacados
+GET http://localhost:8000/products/etiquetas?label=ofertas

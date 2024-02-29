@@ -8,9 +8,9 @@ const fs = require('fs-extra')
 //funcion para crear producto globos
 const createGlobos = async (req, res, next) => {
     try {
-        const { name, description, available, subCategory_id } = req.body
+        const { name, description, available, etiqueta, subCategory_id } = req.body
 
-        const globo = new Globos({ name, description, available, subCategory_id })
+        const globo = new Globos({ name, description, available, etiqueta, subCategory_id })
 
         // Verificar si se adjuntó una imagen en la solicitud
         if (req.files?.image) {

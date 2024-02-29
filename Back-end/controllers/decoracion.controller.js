@@ -8,9 +8,9 @@ const fs = require('fs-extra')
 //funcion para crear producto detalles
 const createDecoracion = async (req, res, next) => {
     try {
-        const { name, description, available, category_id } = req.body
+        const { name, description, available, etiqueta, category_id } = req.body
 
-        const decoracion = new Decoracion({ name, description, available, category_id })
+        const decoracion = new Decoracion({ name, description, available, etiqueta, category_id })
 
         // Verificar si se adjuntó una imagen en la solicitud
         if (req.files?.image) {

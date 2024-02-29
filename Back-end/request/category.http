@@ -3,7 +3,7 @@ POST http://localhost:8000/category/create-category
 Content-Type: application/json
 
 {
-    "name":"figuras"
+    "name":"Complementos"
 }
 
 ### get all category
@@ -17,8 +17,8 @@ POST http://localhost:8000/category/create-subCategory
 Content-Type: application/json
 
 {
-    "name":"comunion",
-    "categoryId":"65d554a440c36abe29c885ed"
+    "name":"Globos Decorativos",
+    "categoryId":"65dfd6f77b09110901ae1ec1"
 }
 
 ### get all subCategory
@@ -28,4 +28,4 @@ GET  http://localhost:8000/category/subCategory
 GET  http://localhost:8000/category/subCategory/65d558c840c36abe29c885f1
 
 ### get all subCategory by category
-GET  http://localhost:8000/category/subCategoryByCategory/65d5548740c36abe29c885eb
+GET  http://localhost:8000/category/subCategoryByCategory/65dfd6f77b09110901ae1ec1
