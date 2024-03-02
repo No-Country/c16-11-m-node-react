@@ -1,200 +1,139 @@
 ---
-import Section from "../components/section.astro";
-import { siteConfig } from "../config/site";
-import Layout from "../layouts/Layout.astro";
-import Listofcards from "../components/listofcards.astro";
-import Hero from "../components/hero.astro";
-import Title from "../components/title.astro";
-import Espec from "../components/espec.astro"
-import Review from "../components/review.astro"
-import Footer from "../components/footer.astro"
-import Slider from "../components/slider.astro"
-import Cards from "../components/cards.astro";
-import Brands from "../components/brands.astro";
-import ListOfImage from "../components/listOfImage.astro";
-import SliderEmpresas from "../components/sliderEmpresas.astro";
 import SectionDestacados from "../components/Home/sectionDestacados.astro";
 import SectionNovedades from "../components/Home/sectionNovedades.astro";
 import SectionOfertas from "../components/Home/sectionOfertas.astro";
+import Brands from "../components/brands.astro";
+import Footer from "../components/footer.astro";
+import ListOfImage from "../components/listOfImage.astro";
+import ListOfReviews from "../components/listOfReviews.astro";
+import NewStore from "../components/newStore.astro";
+import Section from "../components/section.astro";
+import SliderEmpresas from "../components/sliderEmpresas.astro";
+import Title from "../components/title.astro";
+import { siteConfig } from "../config/site";
+import Layout from "../layouts/Layout.astro";
 const defaultSlider = [
-  { img: "/photos/producto2.png", alt: "First placeholder", active: true },
-  { img: "/photos/producto2.png", alt: "Second placeholder" },
-  { img: "/photos/producto3.png", alt: "Third placeholder" },
-  { img: "/photos/producto2.png", alt: "Second placeholder" },
-  { img: "/photos/producto3.png", alt: "Third placeholder" },
+  { img: "/photos/producto2.webp", alt: "First placeholder", active: true },
+  { img: "/photos/producto2.webp", alt: "Second placeholder" },
+  { img: "/photos/producto3.webp", alt: "Third placeholder" },
+  { img: "/photos/producto2.webp", alt: "Second placeholder" },
+  { img: "/photos/producto3.webp", alt: "Third placeholder" },
 ];
-
 ---
 
-
 <Layout title={siteConfig.name}>
-  <main>
+  <main class="w-full">
+    {/* Hero */}
     <header class="hero-container">
       <h2 class="h2">
         ¡Descubre las mejores ideas para decorar tus eventos con globos!
       </h2>
     </header>
-    <SectionDestacados title="Productos destacados"/>
 
-    <SectionOfertas title="Ofertas del Mes"/>
-      
+    {/* Secciones Principales */}
+    <SectionDestacados title="Productos destacados" />
 
-    <SectionNovedades title="Novedades de la Semana"/>
+    <SectionOfertas title="Ofertas del Mes" />
 
-    <Section title="Decoracion para empresas">
-      <Title
-        fontColor="text-[#0E877D]">
-        Decoración para Empresas
-      </Title>
+    <SectionNovedades title="Novedades de la Semana" />
+
+    {/* Secciones Decoración para Empresas */}
+    <Section title="empresas">
+      <Title fontColor="text-[#0E877D]">Decoración para Empresas</Title>
       <div class="md:w-full px-10">
         <SliderEmpresas slider={defaultSlider} />
       </div>
     </Section>
 
+    {/* Secciones de Descripción */}
     <Section title="Descripciòn">
-      <h2
-        class="text-[#0E877D] font-lobster text-5xl px-10 mb-[10px]">
-      
+      <h2 class="text-[#0E877D] font-lobster text-5xl px-10 mb-[10px]">
         Descripción
       </h2>
       <p class="font-lobster text-[#636B78] px-10 mt-10 mb-[10px] text-2xl">
-        Realizamos todo tipo de decoraciones y eventos para empresas principalmente mediante decoración con globos para:
-        Fiestas de empresas
-        Inauguraciones
-        Campañas personalizadas (rebajas - Black Friday - Navidades - San Valentin - etc.)
-        Productos personalizados con logo de la empresa
+        Realizamos todo tipo de decoraciones y eventos para
+        empresas principalmente mediante decoración con globos para: - Fiestas
+        de empresas - Inauguraciones - Campañas personalizadas (rebajas - Black
+        Friday - Navidades - San Valentin - etc.) - Productos personalizados con
+        logo de la empresa
       </p>
       <ListOfImage images={defaultSlider} />
     </Section>
 
+    {/* Secciones de Reviews */}
     <Section title="Reviews">
-      <Title
-        fontColor="text-[#E670A1]"
-      >
+      <Title fontColor="text-[#E670A1]">
         Reseña de nuestros Clientes, amigos y familiares
       </Title>
-      <div class="flex gap-x-10">
-        <Review 
-        avatar="photos/avatar1.png"                               
-        name="Alex"
-        quote="Lorem ipsum dolor sit amet consectetur. Imperdiet lacinia vulputate sed a velit felis in sed cursus. Urna fermentum et elementum venenatis pretium fringilla lacinia id fames."/>
-        <Review 
-        avatar="photos/avatar2.png"                               
-        name="Aleja"
-        quote="Lorem ipsum dolor sit amet consectetur. Imperdiet lacinia vulputate sed a velit felis in sed cursus. Urna fermentum et elementum venenatis pretium fringilla lacinia id fames."/>
-        <Review 
-        avatar="photos/avatar3.png"                               
-        name="Cris"
-        quote="Lorem ipsum dolor sit amet consectetur. Imperdiet lacinia vulputate sed a velit felis in sed cursus. Urna fermentum et elementum venenatis pretium fringilla lacinia id fames."/>
-        </div>
-        <div class="flex gap-x-10 px-10">
-          <div class="w-96">
-            <Cards  imagePath="/photos/producto1.png" />
-            <figure class="mx-auto max-w-44 mb-4">
-              <img class="w-full h-auto" src="icons/star.png" alt="review-stars" />
-            </figure>
-          </div>
-          <div class="w-96">
-            <Cards imagePath="/photos/producto2.png" />
-            <figure class="mx-auto max-w-44 mb-4">
-              <img class="w-full h-auto" src="icons/star.png" alt="review-stars" />
-            </figure>
-          </div>
-          <div class="w-96">
-            <Cards imagePath="/photos/producto3.png" />
-            <figure class="mx-auto max-w-44 mb-4">
-              <img class="w-full h-auto" src="icons/star.png" alt="review-stars" />
-            </figure>
-          </div> 
-        </div>
+      <ListOfReviews />
     </Section>
 
+    {/* Secciones de Marcas */}
     <Section title="Marcas que colaboran con Nosotros">
-      <Title
-        fontColor="text-[#13A09B]"
-      >
+      <Title fontColor="text-[#13A09B]">
         Marcas que colaboran con Nosotros
       </Title>
-      <Brands/>
+      <Brands />
     </Section>
 
-    <Section title="Sobre Nosotros">
-      <Title
-        fontColor="text-[#DD387D]"
-      >
-        Sobre Nosotros
-      </Title>
-      <p class="font-lobster text-4xl px-10 py-6  text-[#0E8783]">
+    {/* Secciones de Sobre Nosotros */}
+    <Section title="sobre-nosotros">
+      <Title fontColor="text-[#DD387D]">Sobre Nosotros</Title>
+      <p class="font-lobster text-4xl px-10 py-6 text-[#0E8783]">
         Bienvenidos A detalles Luna, Especializados en decoraciones con globos
       </p>
-      <img class="w-full h-[600px] rounded-[80px] px-10 bg-center object-cover" src="/photos/equipo1.png" alt="Equipo">
+      <img
+        class="w-full h-[600px] rounded-[80px] px-10 bg-center object-cover"
+        src="/photos/equipo1.webp"
+        alt="Equipo"
+      />
     </Section>
 
+    {/* Secciones de Nuestra Nueva Tienda */}
     <Section title="Nuestra nueva tienda">
-      <Title
-        fontColor="text-[#E670A1]"
-      >
-        Nuestra Nueva Tienda
-      </Title>
-      <p class="font-lobster text-2xl px-10 py-6  text-[#7E8795]">
-        Aprovechamos el cambio de local para renovar nuestra imagen y añadir nuevos servicios que ponemos a tu disposición en el nuevo local. <b>Nueva ubicación en la Avenida de Europa 8, 41089 Montequinto.</b> A escasos 100 metros de nuestro anterior local y muy <b>cerca de la para de metro Europa de la linea 1.</b>
+      <Title fontColor="text-[#E670A1]">Nuestra Nueva Tienda</Title>
+      <p class="font-lobster text-2xl px-10 py-6 text-[#7E8795]">
+        Aprovechamos el cambio de local para renovar nuestra imagen y añadir
+        nuevos servicios que ponemos a tu disposición en el nuevo local. <b
+          >Nueva ubicación en la Avenida de Europa 8, 41089 Montequinto.</b
+        > A escasos 100 metros de nuestro anterior local y muy <b
+          >cerca de la para de metro Europa de la linea 1.</b
+        >
       </p>
-      <div class="flex gap-x-2 h-[760px] text-xl">
-
-        <div class="w-[550px]  flex flex-col gap-y-5">
-          <img class="w-auto h-auto rounded-[80px] px-10 object-cover" src="/photos/antigua.png" alt="">
-          <h5 class="block text-[#E670A1] text-3xl font-lobster px-10">La Antigua Tienda</h5>
-          <p class="block font-lobster text-[#636B78] w-[500px] px-10">
-            Nos hemos mudado, a partir de ahora podrás encontrarnos en nuestra nueva ubicación en la Avenida de Europa 8, 41089 Montequinto. A escasos 100 metros de nuestro anterior local y muy cerca de la para de metro Europa de la linea 1.
-          </p>
-          <p class="block font-lobster text-[#636B78] w-[500px] px-10">
-            Aprovechamos el cambio de local para renovar nuestra imagen y añadir nuevos servicios que ponemos a tu disposición en el nuevo local.</p>
-          </div>
-
-        <div class="w-[550px] h-[450px]  flex flex-col gap-y-5">
-          <img class="w-auto h-auto  rounded-[80px] px-10 object-cover" src="/photos/paqui.png" alt="">
-          <h5 class="block text-[#E670A1] text-3xl font-lobster px-10">Paqui Balbuena / Dueña de la Tienda</h5>
-          <p class="block font-lobster text-[#636B78] px-10">
-            Entusiasta de su trabajo, adora todo lo relacionado con los globos, cada vez que puede se renueva para mejorar y ofrecer a sus clientes novedades y cosas de calidad. Creativa y ama lo que hace, pone mucho empeño y cariño en cada creación que hace e intenta sorprender y superarse en cada uno de sus encargos para así satisfacer a sus clientes. Cuida hasta el último detalle. Son una gran familia.
-          </p>
-        </div>
-
-        <div class="w-[550px] h-[450px] flex flex-col gap-y-5 ">
-          <img class="w-auto h-auto rounded-[80px] px-10 object-cover" src="/photos/maria.png" alt="">
-          <h5 class="block text-[#E670A1] text-3xl font-lobster px-10">María / Dependienta</h5>
-          <p class="block font-lobster text-[#636B78] px-10">
-            Dependienta  con mucha ilusión y entusiasmo a la hora de elaborar un pedido, creativa y ordenada, es como una más de la familia.
-          </p>
-        </div>
-      </div>
+      <NewStore />
     </Section>
 
+    {/* Secciones de Nuestra Filosofia */}
     <Section title="Nuestra filosofia de vida son los globos">
-      <Title
-      fontColor="text-[#DD387D]">
+      <Title fontColor="text-[#DD387D]">
         Nuestra Filosofía De Vida Son Los Globos
       </Title>
-      <p class="font-lobster text-[#636B78] text-2xl px-10">En Detalles Luna encontrarás todo lo necesario para la decoración de eventos. Somos expertos en decoraciones con globos y daremos a tus eventos mayor visibilidad. También disponemos de un amplio surtido de detalles para regalo.
-        Puedes hacer tu pedido online y pedir presupuesto y recoger luego el producto en nuestra tienda de Montequinto, si lo prefieres, podemos encargarnos de realizar los montajes para que no tengas que preocuparte de nada.</p>
+      <p class="font-lobster text-[#636B78] text-2xl px-10">
+        En Detalles Luna encontrarás todo lo necesario para la decoración de
+        eventos. Somos expertos en decoraciones con globos y daremos a tus
+        eventos mayor visibilidad. También disponemos de un amplio surtido de
+        detalles para regalo. Puedes hacer tu pedido online y pedir presupuesto
+        y recoger luego el producto en nuestra tienda de Montequinto, si lo
+        prefieres, podemos encargarnos de realizar los montajes para que no
+        tengas que preocuparte de nada.
+      </p>
     </Section>
 
-    <Section title="Donde Nos puedes Encontrar">
-      <Title fontColor="text-[#0E877D]">
-        ¿Dónde Nos puedes Encontrar?
-      </Title>
-      <div class=" w-full flex gap-x-56 px-10 text-xl">
-        <img class="w-1/2" src="/photos/ubicacion.png" alt="ubicacion">
-        <div class="flex flex-col gap-y-10 text-left w-96 h-auto" >
+    {/* Secciones de Donde Nos puedes Encontrar */}
+    <Section title="ubicacion">
+      <Title fontColor="text-[#0E877D]">¿Dónde Nos puedes Encontrar?</Title>
+      <div class="w-full flex flex-col md:flex-row gap-x-56 px-10 text-xl">
+        <img class="w-1/2" src="/photos/ubicacion.webp" alt="ubicacion" />
+
+        <div class="flex flex-col gap-y-10 text-left w-auto h-auto">
           <h6 class="text-[#0E8783] font-lobster">Detalles Luna</h6>
           <p class="text-[#636B78] font-lobster">
             {siteConfig.address}
           </p>
-          <p class="font-lobster text-[#A1A6AD]">
-            Área de servicio
-          </p>
+          <p class="font-lobster text-[#A1A6AD]">Área de servicio</p>
           <p class="font-lobster text-[#636B78]">
-            Sevilla, España - Bellavista, España <br/>
-            -  Estación de Montequinto, España <br/>
+            Sevilla, España - Bellavista, España <br />
+            - Estación de Montequinto, España <br />
             - Dos Hermanas, España - Alcalá de Guadaíra, España
           </p>
         </div>
@@ -209,7 +148,6 @@ const defaultSlider = [
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 25vh; 
     max-width: 90%;
     margin: auto;
   }
@@ -217,10 +155,9 @@ const defaultSlider = [
   .h2 {
     font-family: "Lobster Two", system-ui;
     font-size: 40px;
-    color: #CA56A1;
-    text-align: center; 
+    color: #ca56a1;
+    text-align: center;
     max-width: 100%;
     margin: 10px 0px;
-    
   }
 </style>

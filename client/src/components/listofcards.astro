@@ -1,8 +1,8 @@
 ---
 import Cards from "./cards.astro";
 interface Props {
-  data: any,
-  colorFont: string
+  data: any;
+  colorFont: string;
 }
 const { data, colorFont } = Astro.props;
 ---
@@ -17,7 +17,7 @@ const { data, colorFont } = Astro.props;
         data.content.map((item) => {
           return (
             <div class="h-full">
-              <Cards imagePath={item.imagen.secure_url} />
+              <Cards imagePath={item.imagen.secure_url} alt={item.name} />
               <p class="card-name">{item.name}</p>
             </div>
           );
@@ -25,21 +25,6 @@ const { data, colorFont } = Astro.props;
       )
     }
   </div>
-
-  <!--     <div class="cards-container">
-      <div>
-        <Card imagePath="/photos/producto1.png" />
-        <p class="card-name">Producto 1</p>
-      </div>
-      <div>
-        <Card imagePath="/photos/producto2.png" />
-        <p class="card-name">Producto 2</p>
-      </div>
-      <div>
-        <Card imagePath="/photos/producto3.png" />
-        <p class="card-name">Producto 3</p>
-      </div>
-    </div> -->
 </div>
 <div class="button-container flex-end justify-end">
   <button class="button">Ver más...</button>
@@ -59,15 +44,6 @@ const { data, colorFont } = Astro.props;
     font-weight: bold;
     margin-bottom: 20px;
   }
-
-  /*   .cards-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 80px;
-    width: 100%;
-  } */
 
   .card-name {
     text-align: center;

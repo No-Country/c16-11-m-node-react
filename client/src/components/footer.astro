@@ -1,103 +1,122 @@
 ---
 import { siteConfig } from "../config/site";
 ---
-<footer class="font-lobster w-full h-[800px] mt-10 bg-[#F6D0E0] px-10 py-10">
-    <div class="w-full flex gap-x-20 text-xl">
-        <div class="w-1/3 ">
-            <h4 class="text-3xl pb-5 text-[#CD27A0]">
-                ¿Dónde Nos puedes encontrar?
-            </h4>
-            <h5 class="text-[#0E8783]">Detalles Luna </h5>
-            <p class="text-[#636B78]">
-                Avenida Europa 8, Montequinto <br/>
-                41089 Dos Hermanas, España
-            </p>
-        </div>
-        <div class="w-1/4">
-            <h4 class="text-3xl pb-5 text-[#CD27A0]">
-                Productos
-            </h4>
-            <p class="text-[#636B78]">
-                Productos Destacados <br/>
-                Ofertas del mes <br/>
-                Novedades de la semana
-            </p>
-        </div>
-        <div class="w-1/4">
-            <h4 class="text-3xl pb-5 text-[#CD27A0]">
-                Nuestra Empresa
-            </h4>
-            <p class="text-[#636B78]">
-              Envío <br/>
-              Aviso Legal <br/>
-              Sobre nosotros <br/>
-              Pago seguro <br/>
-              Contacte con nosotros <br/>
-              Mapa del sitio <br/>
-              Tiendas
-            </p>
-        </div>
-        <div class="w-1/4">
-            <h4 class="text-3xl pb-5 text-[#CD27A0]">
-                Su cuenta
-            </h4>
-            <p class="text-[#636B78]">
-              Información Personal <br/>
-              Pedidos <br/>
-              Facturas por abono <br/>
-              Direcciones
-            </p>
-        </div>
+
+<footer
+  class="font-lobster w-full h-auto mt-10 bg-[#F6D0E0] py-10 px-5 md:px-20 max-w-5xl md:py-10 lg:max-w-6xl xl:max-w-full"
+>
+  <div class="w-full flex flex-col md:flex-row gap-x-20 text-xl">
+    <div class="w-1/3">
+      <h4 class="text-3xl pb-5 text-[#CD27A0]">¿Dónde Nos puedes encontrar?</h4>
+      <h5 class="text-[#0E8783]">Detalles Luna</h5>
+      <p class="text-[#636B78]">
+        Avenida Europa 8, Montequinto <br />
+        41089 Dos Hermanas, España
+      </p>
     </div>
-
-    <div id="contactos" class="w-full flex justify-between mb-16">
-        <div>
-            <h4 class="text-3xl pb-5 text-[#CD27A0]">
-                Contáctenos
-            </h4>
-            <div class="flex flex-col gap-y-2">
-                <div class="text-[#636B78] inline-block flex items-center gap-x-4">
-                    <img class="size-10" src="icons/phone.png" alt="">
-                    <p class="pt-2">{siteConfig.phone}</p>
-                </div>
-    
-                <div class="text-[#CD276C] inline-block flex gap-x-4">
-                    <img class="size-10" src="icons/email.png" alt="">
-                    <p class="pt-2">{siteConfig.email}</p>
-                </div>
-                
-                <p class="text-[#636B78] inline-block ">
-                    {siteConfig.url}
-                </p>
-            </div>
-        </div>
-
-        <div id="icons" class="w-full flex justify-end">
-            <div class="flex w-96 gap-x-3 py-10 justify-end">
-                <img class="size-10" src="/icons/whatsapp.png" alt="WhatsApp Icon" />
-                <img class="size-10"  src="/icons/facebook.png" alt="Facebook Icon" />
-                <img class="size-10"  src="/icons/instagram.png" alt="Instagram Icon" />
-                <img class="size-10"  src="/icons/pinterest.png" alt="Pinterest Icon" />
-                <img class="size-10"  src="/icons/linkedin.png" alt="LinkedIn Icon" />
-                <img class="size-10"  src="/icons/gorjeo.png" alt="Icono X" />
-              </div>
-        </div>
+    <div class="w-1/4">
+      <h4 class="text-3xl pb-5 text-[#CD27A0]">Nuestra Empresa</h4>
+      <p class="text-[#636B78]">
+        Envío <br />
+        Aviso Legal <br />
+        Sobre nosotros <br />
+        Pago seguro <br />
+        Contacte con nosotros <br />
+        Mapa del sitio <br />
+      </p>
     </div>
+    <div class="w-1/4">
+      <h4 class="text-3xl pb-5 text-[#CD27A0]">Productos</h4>
+      <p class="text-[#636B78]">
+        Productos Destacados <br />
+        Ofertas del mes <br />
+        Novedades de la semana
+      </p>
+    </div>
+    <!-- <div class="w-1/4">
+      <h4 class="text-3xl pb-5 text-[#CD27A0]">Su cuenta</h4>
+      <p class="text-[#636B78]">
+        Información Personal <br />
+        Pedidos <br />
+        Facturas por abono <br />
+        Direcciones
+      </p>
+    </div> -->
+  </div>
 
+  <div
+    id="contactos"
+    class="w-full flex flex-col md:flex-row justify-between mb-16"
+  >
+    <div>
+      <h4 class="text-3xl pb-5 text-[#CD27A0]">Contáctenos</h4>
+      <div class="flex flex-col gap-y-2">
+        <div class="text-[#636B78] flex items-center gap-x-4">
+          <img class="size-10" src="icons/phone.webp" alt="" />
+          <p class="pt-2">{siteConfig.phone}</p>
+        </div>
 
-    <div class="flex flex-col justify-center">
+        <div class="text-[#CD276C] flex gap-x-4">
+          <img class="size-10" src="icons/email.webp" alt="" />
+          <p class="pt-2">{siteConfig.email}</p>
+        </div>
 
-    <div class="flex w-full justify-start">
-        <p class="w-full text-[#636B78] font-poppins font-extrabold">
-          El color y el precio de algunos de los productos pueden variar. Cada producto o servicio es único y original, tú eres el diseñador, nosotros te asesoramos y hacemos realidad tus necesidades.
+        <p class="text-[#636B78] inline-block">
+          {siteConfig.url}
         </p>
+      </div>
     </div>
 
-    <div class="flex gap-x-10 justify-center items-center">
-        <img src="logo.png" alt="logo">
-        <p class="text-[#0E8783] text-2xl">© Detalles luna, todos los derechos reservados</p>
+    <div id="icons" class="w-full flex justify-center md:justify-end">
+      <div class="flex w-96 gap-x-3 py-2 justify-end pr-14 items-center">
+        <img
+          class="size-7 md:size-10"
+          src="/icons/whatsapp.webp"
+          alt="WhatsApp Detalles luna"
+        />
+        <img
+          class="size-7 md:size-10"
+          src="/icons/facebook.webp"
+          alt="Facebook Detalles luna"
+        />
+        <img
+          class="size-7 md:size-10"
+          src="/icons/instagram.webp"
+          alt="Instagram Detalles luna"
+        />
+        <img
+          class="size-7 md:size-10"
+          src="/icons/pinterest.webp"
+          alt="Pinterest Detalles luna"
+        />
+        <img
+          class="size-7 md:size-10"
+          src="/icons/linkedin.webp"
+          alt="LinkedIn Detalles luna"
+        />
+        <img
+          class="size-7 md:size-10"
+          src="/icons/gorjeo.webp"
+          alt="Detalles luna Twitter"
+        />
+      </div>
     </div>
-    
+  </div>
+
+  <div class="flex flex-col justify-center">
+    <div class="flex justify-start">
+      <p class="text-[#636B78] font-poppins font-extrabold">
+        El color y el precio de algunos de los productos pueden variar. Cada
+        producto o servicio es único y original, tú eres el diseñador, nosotros
+        te asesoramos y hacemos realidad tus necesidades.
+      </p>
     </div>
 
+    <div class="flex flex-col md:flex-row gap-x-10 justify-center items-center">
+      <img src="logo.webp" alt="Detalles Luna" />
+      <p class="text-[#0E8783] text-2xl">
+        © Detalles luna, todos los derechos reservados
+      </p>
+    </div>
+  </div>
 </footer>

@@ -1,14 +1,14 @@
 ---
 const defaultSlider = [
-  { img: "/photos/producto1.png", alt: "First placeholder", active: true },
-  { img: "/photos/producto2.png", alt: "Second placeholder" },
-  { img: "/photos/producto3.png", alt: "Third placeholder" },
+  { img: "/photos/producto1.webp", alt: "First placeholder", active: true },
+  { img: "/photos/producto2.webp", alt: "Second placeholder" },
+  { img: "/photos/producto3.webp", alt: "Third placeholder" },
 ];
 
 const { slider } = Astro.props;
 ---
 
-<div id="controls-carousel" class="relative w-full " data-carousel="static">
+<div id="controls-carousel" class="relative w-full" data-carousel="static">
   <!-- Carousel wrapper -->
   <div class="relative h-56 overflow-hidden rounded-lg md:h-[500px] border">
     {
@@ -85,7 +85,7 @@ const { slider } = Astro.props;
 </div>
 
 <style>
-    .border {
+  .border {
     border-radius: 80px;
     border-style: black;
     border-width: 2px;

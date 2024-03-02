@@ -5,15 +5,14 @@ import Carrusel from "../components/carrusel.astro";
 interface Props {
   title: string;
   description: string;
-  titleColor?: string;
   images: string;
 }
 
-const { title, description, titleColor, images } = Astro.props;
+const { title, description, images } = Astro.props;
 console.log(images);
 ---
 
-<div id={title} class="md:flex md:gap-x-8 mt-20 px-20">
+<div id={title} class="md:flex md:gap-x-8 mt-20 px-10 md:px-20">
   <div class="md:w-2/4">
     <Carrusel slider={images} />
   </div>
@@ -24,8 +23,10 @@ console.log(images);
         {description}
       </p>
 
-      <div class="rounded-3xl bg-[#B2A9AB] py-2 px-6 text-[#403A3C] text-xl font-lobster">
-        Características Del Producto / Servicio 
+      <div
+        class="rounded-3xl bg-[#B2A9AB] py-2 px-6 text-[#403A3C] text-xl font-lobster"
+      >
+        Características Del Producto / Servicio
       </div>
 
       <div class="ml-52">
@@ -34,26 +35,3 @@ console.log(images);
     </header>
   </div>
 </div>
-
-<!-- <div class="md:flex md:gap-x-8">
-    <div class="md:w-2/4">
-      <Carrusel />
-    </div>
-
-    <div class="md:w-2/4 flex justify-center">
-      <header class="w-96 h-auto flex flex-col gap-y-28">
-        <p class=`font-lobster text-xl pt-5 pb-2 inline-block ${className}`>
-          {description}
-        </p>
-
-          <div class="rounded-3xl bg-pink-300 py-2 px-6 text-white text-xl font-lobster">
-            Características Del Producto / Servicio 
-          </div>
-
-        <div class="ml-52">
-          <Button />
-        </div>
-
-      </header>
-    </div>
-  </div> -->

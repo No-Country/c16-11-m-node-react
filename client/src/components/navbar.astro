@@ -1,55 +1,54 @@
-<nav class="navbar">
-  <div class="pink-section">
-    <div class="phone">
-      <div class="phone-content">
-        <img src="icons/phone.png" alt="Phone Icon" />
-        <span class="phone-number">954128609</span>
-        <span class="horarios">Horarios</span>
-        <img src="icons/flecha.png" alt="Arrow Icon" class="arrow" />
+<header class="">
+  <nav class="navbar">
+    <div class="pink-section fixed top-0 z-50">
+      <div class="phone">
+        <div class="phone-content">
+          <img src="icons/phone.webp" alt="Phone Icon" />
+          <span class="phone-number">954128609</span>
+          <span class="horarios">Horarios</span>
+          <img src="icons/flecha.webp" alt="Arrow Icon" class="arrow" />
+        </div>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar..." />
+      </div>
+      <div class="social-icons">
+        <div class="social-content">
+          <img src="/icons/whatsapp.webp" alt="WhatsApp Detalles luna" />
+          <img src="/icons/facebook.webp" alt="Facebook Detalles luna" />
+          <img src="/icons/instagram.webp" alt="Instagram Detalles luna" />
+          <img src="/icons/pinterest.webp" alt="Pinterest Detalles luna" />
+          <img src="/icons/linkedin.webp" alt="LinkedIn Detalles luna" />
+          <img src="/icons/gorjeo.webp" alt="Detalles luna Twitter" />
+        </div>
       </div>
     </div>
-    <div class="search-bar">
-      <input type="text" placeholder="Buscar..." />
-    </div>
-    <div class="social-icons">
-      <div class="social-content">
-        <img src="/icons/whatsapp.png" alt="WhatsApp Icon" />
-        <img src="/icons/facebook.png" alt="Facebook Icon" />
-        <img src="/icons/instagram.png" alt="Instagram Icon" />
-        <img src="/icons/pinterest.png" alt="Pinterest Icon" />
-        <img src="/icons/linkedin.png" alt="LinkedIn Icon" />
-        <img src="/icons/gorjeo.png" alt="Icono X" />
-      </div>
-    </div>
-  </div>
 
-  <div class="white-section">
-    <div class="logo">
-      <img src="/logo-detalles-luna.png" alt="Logo Detalles Luna" />
+    <div class="white-section sm:mt-16">
+      <div class="logo">
+        <a href="/">
+          <img src="/logo-detalles-luna.webp" alt="Logo Detalles Luna" />
+        </a>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="/decoracion">Decoración</a></li>
+          <li><a href="/globos">Globos</a></li>
+          <li><a href="/detalles">Detalles</a></li>
+          <li><a href="#empresas">Empresas</a></li>
+          <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+          <li><a href="#ubicacion" class="last-menu-item">Contacto</a></li>
+          <li>
+            <img src="/icons/megusta.webp" alt="Me gusta" class="social-icon" />
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="menu">
-      <ul>
-        <li><a href="/decoracion">Decoración</a></li>
-        <li><a href="/globos">Globos</a></li>
-        <li><a href="/detalles">Detalles</a></li>
-        <li><a href="#">Empresas</a></li>
-        <li><a href="#">Sobre Nosotros</a></li>
-        <li><a href="#" class="last-menu-item">Contacto</a></li>
-        <li>
-          <img src="/icons/megusta.png" alt="Me gusta" class="social-icon" />
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  </nav>
+</header>
 
 <style scoped>
-  body {
-    margin: 0;
-  }
-
   .navbar {
-    width: 100%;
     display: flex;
     flex-direction: column;
     color: #fff;
@@ -75,7 +74,7 @@
     align-items: center;
     background-color: rgba(255, 230, 240, 0.9);
     width: auto;
-    padding: 5px;
+    padding: 5px 10px 5px 15px;
     border-radius: 20px;
   }
 
@@ -93,14 +92,14 @@
   }
 
   .phone .horarios {
-    color: #B72483;
+    color: #b72483;
     margin-right: 10px;
     font-family: "Poppins";
   }
 
   .arrow {
     width: 3px;
-    color: #B72483;
+    color: #b72483;
   }
 
   .search-bar {
@@ -127,7 +126,7 @@
     align-items: center;
     background-color: rgba(255, 230, 240, 0.9);
     width: auto;
-    padding: 5px;
+    padding: 8px 8px 8px 15px;
     border-radius: 20px;
   }
 
@@ -147,7 +146,7 @@
   }
 
   .logo img {
-    margin: 0 auto;
+    margin: 35px auto;
   }
 
   .menu ul {
@@ -168,18 +167,27 @@
     color: #e670a1;
   }
 
-  @media (width <= 375px) {
+  @media (width <= 390px) {
     .navbar {
-      width: 375px;
+      width: 100%;
+    }
+
+    .white-section {
+      text-align: center;
+      margin-top: 180px;
     }
     .pink-section {
       flex-direction: column;
       align-items: center;
       gap: 10px;
     }
+
+    .logo img {
+      margin: 35px auto;
+      width: 200px;
+    }
     .menu ul {
       flex-direction: column;
     }
   }
-
 </style>

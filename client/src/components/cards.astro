@@ -1,13 +1,14 @@
 ---
 interface Props {
   imagePath: string;
+  alt: string;
 }
 
-const { imagePath } = Astro.props;
+const { imagePath, alt } = Astro.props;
 ---
 
-<article class="card mr-10">
-  <img class="card-image" src={imagePath} alt="Producto1" />
+<article class="card mr-0 md:mr-10">
+  <img class="card-image" src={imagePath} alt={alt} />
 </article>
 
 <style>
