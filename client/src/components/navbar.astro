@@ -2,10 +2,10 @@
   <div class="pink-section">
     <div class="phone">
       <div class="phone-content">
-        <img src="/icons/phone.png" alt="Phone Icon" />
+        <img src="icons/phone.png" alt="Phone Icon" />
         <span class="phone-number">954128609</span>
         <span class="horarios">Horarios</span>
-        <img src="/icons/flecha.png" alt="Arrow Icon" class="arrow" />
+        <img src="icons/flecha.png" alt="Arrow Icon" class="arrow" />
       </div>
     </div>
     <div class="search-bar">
@@ -53,7 +53,6 @@
     display: flex;
     flex-direction: column;
     color: #fff;
-    overflow-x: hidden;
   }
 
   .pink-section {
@@ -81,27 +80,27 @@
   }
 
   .phone img {
-    width: 30px;
+    width: 35px;
     margin-right: 5px;
-    color: #0e877d;
+    color: #098680;
   }
 
   .phone .phone-number {
-    color: #f85e91;
+    color: #098680;
     margin-right: 30px;
     font-weight: bold;
-    font-family: "Arial Narrow", sans-serif;
+    font-family: "Poppins";
   }
 
   .phone .horarios {
-    color: #fc6799;
+    color: #B72483;
     margin-right: 10px;
-    font-family: "Arial Narrow", sans-serif;
+    font-family: "Poppins";
   }
 
   .arrow {
     width: 3px;
-    color: #fa8bb0;
+    color: #B72483;
   }
 
   .search-bar {
@@ -168,4 +167,19 @@
   .menu li a.last-menu-item {
     color: #e670a1;
   }
+
+  @media (width <= 375px) {
+    .navbar {
+      width: 375px;
+    }
+    .pink-section {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .menu ul {
+      flex-direction: column;
+    }
+  }
+
 </style>

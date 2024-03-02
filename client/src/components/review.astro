@@ -2,7 +2,7 @@
 interface Props {
   avatar  : string;
   quote: string;
-    name: string    
+  name: string    
 }
 
 const { quote, name, avatar } = Astro.props;
@@ -12,13 +12,10 @@ const { quote, name, avatar } = Astro.props;
   <article class="mx-auto text-center flex flex-col justify-center items-center">
     <img class="rounded-full size-56" src={avatar} alt={name}>
     <p
-      class="font-tiempos font-light text-xl text-pretty md:text-xl lg:max-w-5xl mx-auto text-[#1a1715]"
+      class=" font-lobster font-light text-xl text-pretty md:text-xl lg:max-w-5xl mx-auto text-[#495057]"
     >
       {quote}
     </p>
-    <p class="mt-5 text-lg text-podia-description">- {name}</p>
-    <figure class="mx-auto max-w-44 mb-4">
-        <img class="w-full h-auto" src="icons/stars.jpeg" alt="review-stars" />
-      </figure>
+    <p class=" font-lobster mt-5 text-lg text-podia-description">- {name}</p>
   </article>
 </div>
