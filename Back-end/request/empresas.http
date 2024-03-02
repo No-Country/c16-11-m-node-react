@@ -1,0 +1,19 @@
+### create Empresas
+POST  http://localhost:8000/empresas/crear
+Content-Type: application/json
+
+{
+    "name": "lunares",
+    "description": "description 2",
+    "etiqueta": "empresas",
+    "available": true
+}
+
+### get all Empresas
+GET http://localhost:8000/empresas/get
+
+### get Empresas by id - OK 
+GET http://localhost:8000/empresas/get/65d57af3d1b3a2e0bfdd3bbe
+
+### get Empresas by id - WRON
+GET http://localhost:8000/empresas/get?id=65d57af3d1b3a2e0bfd

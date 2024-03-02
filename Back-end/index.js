@@ -8,6 +8,7 @@ const { EXPRESS_CONFIG, MONGO_CONFIG } = require('./config')
 const { categoryRouter } = require('./routes/categories.router')
 const { decoracionRouter } = require('./routes/decoraciones.router')
 const { detallesRouter } = require('./routes/detalles.router')
+const { EmpresasRouter } = require('./routes/empresas.router')
 const { globoRouter } = require('./routes/globos.router')
 const { productRouter } = require('./routes/products.router')
 
@@ -26,20 +27,23 @@ app.use(fileUpload({
 }))
 
 // Asignar las rutas de los enrutadores a las rutas de la aplicación
-//https://c16-11-m-node-react-3.onrender.com/products/get
+//https://c16-11-m-node-react-3.onrender.com/products
 app.use('/products', productRouter)
 
-//https://c16-11-m-node-react-3.onrender.com/category/get
+//https://c16-11-m-node-react-3.onrender.com/category
 app.use('/category', categoryRouter)
 
-//https://c16-11-m-node-react-3.onrender.com/decoraciones/get
+//https://c16-11-m-node-react-3.onrender.com/decoraciones
 app.use('/decoraciones', decoracionRouter)
 
-//https://c16-11-m-node-react-3.onrender.com/globos/get
+//https://c16-11-m-node-react-3.onrender.com/globos
 app.use('/globos', globoRouter)
 
-//https://c16-11-m-node-react-3.onrender.com/detalles/get
+//https://c16-11-m-node-react-3.onrender.com/detalles
 app.use('/detalles', detallesRouter)
+
+//https://c16-11-m-node-react-3.onrender.com/empresas
+app.use('/empresas', EmpresasRouter)
 
 // Conectar a la base de datos MongoDB utilizando la URI proporcionada
 mongoose.connect(MONGO_CONFIG.URI)
