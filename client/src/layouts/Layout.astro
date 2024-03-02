@@ -1,5 +1,7 @@
 ---
 import "@fontsource/lobster-two";
+import "@fontsource/poppins";
+import '@fontsource/poppins/600.css';
 import Navbar from "../components/navbar.astro";
 import { siteConfig } from "../config/site";
 
@@ -24,6 +26,7 @@ const { title } = Astro.props;
   <body>
     <Navbar />
     <slot />
+    <script src="flowbite/dist/flowbite.min.js"></script>
   </body>
   <style is:global>
     html {
@@ -37,9 +40,7 @@ const { title } = Astro.props;
       line-height: 1.8;
       padding: 0;
       box-sizing: border-box;
-      max-width: 120rem;
-      margin: 0 auto;
-      width: 90%;
+      width: 100%;
     }
   </style>
 </html>

@@ -11,9 +11,9 @@ export const siteConfig = {
   twitter: "https://twitter.com/detallesluna",
 
   // Contact
-  phone: "34954128609",
-  email: "pedidos@detallesluna.com",
-  address: "Avda de Europa 8, Montequinto. 41089 Sevilla",
+  phone: "954128609",
+  email: "info@detallesluna.com",
+  address: "Avenida Europa 8, Montequinto 41089 Dos Hermanas, España",
 
   // Open hours
   openHours: "Lunes a Viernes: 10:00 - 14:00 y 17:30 - 20:30. Sábados: 10:00 - 14:00",

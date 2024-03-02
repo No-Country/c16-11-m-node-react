@@ -1,0 +1,31 @@
+---
+import Espec from "../../components/espec.astro";
+import Hero from "../../components/hero.astro";
+import Listofcards from "../../components/listofcards.astro";
+import Title from "../../components/title.astro";
+
+import { getSection } from "../../services/getSection";
+import { homeUrls } from "../../services/urls";
+
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+
+const data = await getSection(homeUrls.destacados);
+console.log(data.content[0].imagen.secure_url);
+---
+
+<section
+  id={title}
+  class=`box-content px-5 mx-auto max-w-5xl md:py-10 lg:max-w-6xl xl:max-w-7xl`
+>
+  <Title color="bg-[#418C98]" fontColor="text-white">{title}</Title>
+  <Hero
+    title={data.content[3].name}
+    description={data.content[3].description}
+    images={data.content[0].imagen.secure_url}
+  />
+  <Listofcards data={data} colorFont="text-[#2E636B]"/>
+  <Espec />
+</section>

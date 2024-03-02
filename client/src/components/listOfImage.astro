@@ -1,28 +1,19 @@
 ---
 import Cards from "./cards.astro";
-interface Props {
-  data: any,
-  colorFont: string
-}
-const { data, colorFont } = Astro.props;
+const { images } = Astro.props;
 ---
 
 <div class="list-of-cards">
-  <h2 class=`${colorFont}`>Productos relacionados</h2>
-  <div class="w-full h-[370px] overflow-x-auto flex">
+  <div class="w-full h-[350px] overflow-x-auto flex">
     {
-      !data ? (
-        <p>No hay productos relacionados</p>
-      ) : (
-        data.content.map((item) => {
-          return (
-            <div class="h-full">
-              <Cards imagePath={item.imagen.secure_url} />
-              <p class="card-name">{item.name}</p>
-            </div>
-          );
-        })
-      )
+      images?.map((item) => {
+        return (
+          <div class=" h-full">
+            <Cards imagePath={item.img} />
+            <p class="card-name">{item.alt}</p>
+          </div>
+        );
+      })
     }
   </div>
 
@@ -42,7 +33,7 @@ const { data, colorFont } = Astro.props;
     </div> -->
 </div>
 <div class="button-container flex-end justify-end">
-  <button class="button">Ver más...</button>
+  //todo agregar contacto
 </div>
 
 <style>
@@ -55,7 +46,8 @@ const { data, colorFont } = Astro.props;
 
   .list-of-cards h2 {
     font-family: "Lobster Two", system-ui;
-    font-size: 40px;
+    font-size: 28px;
+    color: #11a4ee;
     font-weight: bold;
     margin-bottom: 20px;
   }

@@ -1,12 +1,13 @@
 ---
-import Button from "./button.astro";
-import Carrusel from "./carrusel.astro";
-const { title, description, bgColor, titleColor } = Astro.props;
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
 ---
 
 <section
   id={title}
-  class=`box-content px-5 my-10 mx-auto max-w-5xl md:py-10 lg:max-w-6xl xl:max-w-7xl ${bgColor}`
+  class=`box-content px-5  mx-auto max-w-5xl md:py-10 lg:max-w-6xl xl:max-w-7xl`
 >
-  <slot/>
+  <slot />
 </section>
