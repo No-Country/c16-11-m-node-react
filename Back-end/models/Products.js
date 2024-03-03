@@ -5,10 +5,10 @@ const productSchema = new mongoose.Schema({
     available: { type: Boolean, default: false },
     description: { type: String, required: true },
     etiqueta: { type: String, enum: ["destacados", "novedades", "ofertas", "empresas", "none"], default: "none" },
-    imagen: {
+    imagen: [{
         public_id: { type: String },
         secure_url: { type: String }
-    }
+    }]
 })
 
 const Product = model('Product', productSchema)

@@ -8,35 +8,39 @@ const fs = require('fs-extra')
 //funcion para crear producto globos
 const createGlobos = async (req, res, next) => {
     try {
-        const { name, description, available, etiqueta, subCategory_id } = req.body
+        const { name, description, available, etiqueta, subCategory_id } = req.body;
 
-        const globo = new Globos({ name, description, available, etiqueta, subCategory_id })
+        const globo = new Globos({ name, description, available, etiqueta, subCategory_id });
 
-        // Verificar si se adjuntó una imagen en la solicitud
-        if (req.files?.image) {
-            // Subir la imagen a Cloudinary y obtener el resultado
-            const result = await uploadImage(req.files.image.tempFilePath)
-
-            // Asignar el public_id y secure_url de la imagen al globo
-            globo.imagen = {
-                public_id: result.public_id,
-                secure_url: result.secure_url
+        // Verificar si se adjuntaron imágenes en la solicitud
+        if (req.files && req.files.image) {
+            const uploadedImages = [];
+            // Subir cada imagen a Cloudinary y obtener los resultados
+            for (let i = 0; i < req.files.image.length; i++) {
+                const result = await uploadImage(req.files.image[i].tempFilePath);
+                uploadedImages.push({
+                    public_id: result.public_id,
+                    secure_url: result.secure_url
+                });
+                // Eliminar el archivo temporal después de subirlo a Cloudinary
+                if (req.files.image[i].tempFilePath) {
+                    await fs.unlink(req.files.image[i].tempFilePath);
+                }
             }
-
-            // Eliminar el archivo temporal después de subirlo a Cloudinary
-            if (req.files.image.tempFilePath) {
-                await fs.unlink(req.files.image.tempFilePath);
-            }
+            // Asignar las imágenes al globo
+            globo.imagen = uploadedImages;
         }
 
-        await globo.save()
+        await globo.save();
 
-        res.status(201)
-        res.json(makeSuccessResponse(globo))
+        res.status(201);
+        res.json(makeSuccessResponse(globo));
     } catch (err) {
-        next(err)
+        next(err);
     }
-}
+};
+
+
 
 //funcion para buscar globos por id o todos
 const getGlobos = async (req, res, next) => {

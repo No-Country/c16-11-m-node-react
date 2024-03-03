@@ -11,20 +11,22 @@ const createEmpresas = async (req, res, next) => {
         const empresa = new Empresas({ name, description, available, etiqueta })
 
         // Verificar si se adjuntó una imagen en la solicitud
-        if (req.files?.image) {
-            // Subir la imagen a Cloudinary y obtener el resultado
-            const result = await uploadImage(req.files.image.tempFilePath)
-
-            // Asignar el public_id y secure_url de la imagen al globo
-            empresa.imagen = {
-                public_id: result.public_id,
-                secure_url: result.secure_url
+        if (req.files && req.files.image) {
+            const uploadedImages = [];
+            // Subir cada imagen a Cloudinary y obtener los resultados
+            for (let i = 0; i < req.files.image.length; i++) {
+                const result = await uploadImage(req.files.image[i].tempFilePath);
+                uploadedImages.push({
+                    public_id: result.public_id,
+                    secure_url: result.secure_url
+                });
+                // Eliminar el archivo temporal después de subirlo a Cloudinary
+                if (req.files.image[i].tempFilePath) {
+                    await fs.unlink(req.files.image[i].tempFilePath);
+                }
             }
-
-            // Eliminar el archivo temporal después de subirlo a Cloudinary
-            if (req.files.image.tempFilePath) {
-                await fs.unlink(req.files.image.tempFilePath);
-            }
+            // Asignar las imágenes al globo
+            empresa.imagen = uploadedImages;
         }
 
         await empresa.save()
