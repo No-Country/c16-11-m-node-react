@@ -1,0 +1,39 @@
+---
+import Button from "../../../components/button.astro";
+import Carrusel from "../../../components/carrusel.astro";
+
+import { getProduct } from "../../../services/getProduct";
+const { globoId } = Astro.params;
+if(!globoId) return null
+const arrayUrl = globoId.split("/")
+const id = arrayUrl[arrayUrl.length - 1]
+console.log(id)
+
+const data = await getProduct(id)
+console.log(data)
+---
+
+<div class="md:flex md:gap-x-8 mt-20 px-10 md:px-20">
+  <div class="md:w-2/4">
+    <img class="h-56" src={data.content.imagen[0].secure_url} alt={data.content.name}>
+    <!-- <Carrusel slider={images} /> -->
+  </div>
+
+  <div class="md:w-2/4 flex justify-center">
+    <header class="w-96 h-auto flex flex-col gap-y-16">
+      <p class="font-lobster text-[#636B78] text-xl pt-5 pb-4">
+        {data.content.description}
+      </p>
+
+      <div
+        class="rounded-3xl bg-[#B2A9AB] py-2 px-6 text-[#403A3C] text-xl font-lobster"
+      >
+        Características Del Producto / Servicio
+      </div>
+
+      <div class="ml-52">
+        <Button />
+      </div>
+    </header>
+  </div>
+</div>

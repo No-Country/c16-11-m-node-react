@@ -17,7 +17,7 @@ const { data, colorFont } = Astro.props;
         data.content.map((item) => {
           return (
             <div class="h-full">
-              <Cards imagePath={item.imagen.secure_url} alt={item.name} />
+              <Cards imagePath={item.imagen[0].secure_url} alt={item.name} />
               <p class="card-name">{item.name}</p>
             </div>
           );

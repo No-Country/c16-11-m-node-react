@@ -1,0 +1,48 @@
+---
+import { ViewTransitions } from "astro:transitions"
+import Navbar from "../components/navbar.astro"
+
+interface Props {
+  description?: string
+  title: string
+}
+
+const { description, title } = Astro.props
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="robots" content="nofollow, noindex" />
+    <title>{title}</title>
+    <slot name="preload" />
+    <ViewTransitions />
+  </head>
+
+  <body>
+    <main>
+        <Navbar />
+        <slot />
+    </main>
+  </body>
+</html>
+    <style is:global>
+
+      html {
+        font-family: "Lobster Two", "sans-serif";
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        width: 100%;
+      }
+
+    </style>
+  </body>
+</html>
