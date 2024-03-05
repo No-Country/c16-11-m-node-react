@@ -13,7 +13,8 @@ cloudinary.config({
 // Función para cargar una imagen a Cloudinary
 const uploadImage = (filePath) => {
     return cloudinary.uploader.upload(filePath, {
-        folder: 'detallesLuna'
+        folder: 'detallesLuna',
+        format: 'webp'
     });
 };
 
