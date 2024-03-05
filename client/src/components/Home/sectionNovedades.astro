@@ -23,7 +23,7 @@ const data = await getSection(homeUrls.novedades);
   <Hero
     title={data.content[10].name}
     description={data.content[5].description}
-    images={data.content[10].imagen.secure_url}
+    images={data.content[10].imagen[0].secure_url}
   />
   <Listofcards data={data} colorFont="text-[#f27084]"/>  
   <Espec />

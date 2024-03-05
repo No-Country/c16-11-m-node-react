@@ -22,9 +22,9 @@ console.log(data.content[0].imagen.secure_url);
 >
   <Title color="bg-[#418C98]" fontColor="text-white">{title}</Title>
   <Hero
-    title={data.content[3].name}
-    description={data.content[3].description}
-    images={data.content[0].imagen.secure_url}
+    title={data.content[0].name}
+    description={data.content[0].description}
+    images={data.content[0].imagen[0].secure_url}
   />
   <Listofcards data={data} colorFont="text-[#2E636B]"/>
   <Espec />

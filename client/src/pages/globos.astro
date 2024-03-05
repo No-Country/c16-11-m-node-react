@@ -4,7 +4,7 @@ import { siteConfig } from "../config/site";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title={siteConfig.name}/>
+<Layout title={siteConfig.name}>
 <main>
   <header>
     <h2 class="h2">
@@ -19,6 +19,7 @@ import Layout from "../layouts/Layout.astro";
     </h2>
   </header>
 </main>
+</Layout>
 
 <style>
   .hero-container {

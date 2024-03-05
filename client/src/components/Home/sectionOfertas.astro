@@ -25,7 +25,7 @@ const data = await getSection(homeUrls.ofertas);
     <Hero
     title={data.content[0].name}
     description={data.content[0].description}
-    images={data.content[0].imagen.secure_url}
+    images={data.content[0].imagen[0].secure_url}
   />
   <Listofcards data={data} colorFont="text-[#D9176A]"/>
   <Espec />

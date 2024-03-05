@@ -1,0 +1,83 @@
+---
+import LayoutPage from "../../../layouts/LayoutPage.astro";
+import { getGlobos } from "../../../services/getGlobos";
+
+const GLOBOS = {
+  TEMATICOS: {
+    bebes: "65d558c840c36abe29c885f1",
+    boda: "65d5595240c36abe29c885f9",
+  },
+  LICENCIADOS: {
+    disney: "65d558c840c36abe29c885f1",
+    starWars: "65d5595240c36abe29c885f9",
+  },
+  COMPLEMENTOS: {
+    centroDeMesa: "65d558c840c36abe29c885f1",
+    contrapeso: "65d5595240c36abe29c885f9",
+  },
+};
+
+const { id } = Astro.params;
+
+const urlId = (id: string) => {
+  if (GLOBOS.TEMATICOS[id]) return GLOBOS.TEMATICOS[id];
+  if (GLOBOS.LICENCIADOS[id]) return GLOBOS.LICENCIADOS[id];
+  if (GLOBOS.COMPLEMENTOS[id]) return GLOBOS.COMPLEMENTOS[id];
+};
+const url = urlId(id!);
+console.log(url);
+const data = await getGlobos(url);
+console.log(data.content[0].imagen[0].secure_url);
+---
+
+<LayoutPage title="Globos">
+
+  <section class="w-full flex flex-wrap mx-auto">
+    {
+      !data ? (
+        <p>No hay productos Relacionados</p>
+      ) : (
+        data.content.map((item) => {
+          return (
+            <a href=`/globos/tematicos/${id}/product/${item._id}/` >
+              <div class="flex flex-col w-auto">
+              <article class="card mr-0 md:mr-10">
+                <img
+                  class="card-image"
+                  src={item.imagen[0].secure_url}
+                  alt={item.name}
+                />
+              </article>
+              <p class="card-name">{item.name}</p>
+            </div>  
+            </a>
+          );
+        })
+      )
+    }
+  </section>
+</LayoutPage>
+
+<style>
+  .card {
+    width: 350px;
+    height: 280px;
+    border-radius: 80px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-style: black;
+    border-width: 2px;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .card-name {
+    text-align: center;
+    font-family: "Lobster Two", system-ui;
+    font-size: 18px;
+    color: #636b78;
+  }
+</style>
