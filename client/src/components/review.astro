@@ -14,18 +14,18 @@ const { quote, name, avatar } = Astro.props;
   <article
     class="mx-auto text-center flex flex-col justify-center items-center"
   >
-    <img class="rounded-full size-56" src={avatar} alt={name} />
-    <div>
+    <img class="rounded-full size-44" src={avatar} alt={name} />
+    <div class="max-w-56 my-4">
       <p
-        class="font-lobster font-light text-xl text-pretty md:text-xl lg:max-w-5xl mx-auto text-[#495057]"
+        class="font-lobster font-light text-xl text-pretty md:text-xl mx-auto text-[#495057]"
       >
         {quote}
       </p>
-      <p class="font-lobster mt-5 text-lg text-podia-description">- {name}</p>
+      <p class="font-lobster mt-5 text-lg">- {name}</p>
     </div>
     <div class="">
-      <Cards imagePath="/photos/producto1.webp" alt="Centro de globos" />
-      <figure class="mx-auto max-w-44 mb-4">
+      <Cards imagePath="/photos/producto3.webp" alt="Centro de globos" />
+      <figure class="mx-auto max-w-44 mt-4">
         <img class="w-full h-auto" src="icons/star.webp" alt="review-stars" />
       </figure>
     </div>

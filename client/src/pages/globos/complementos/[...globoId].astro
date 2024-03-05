@@ -10,12 +10,14 @@ import { defaultSlider } from "../../../utils/slider";
 
 import { getProduct } from "../../../services/getProduct";
 const { globoId } = Astro.params;
+console.log(globoId);
 if (!globoId) return null;
-
 const arrayUrl = globoId.split("/");
 const id = arrayUrl[arrayUrl.length - 1];
+console.log(id);
 
 const data = await getProduct(id);
+console.log(data);
 ---
 
 <Layout title={data.content.name}>

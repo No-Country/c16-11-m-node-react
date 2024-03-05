@@ -10,7 +10,7 @@ const { images } = Astro.props;
       images?.map((item) => {
         return (
           <div class=" h-full">
-            <Cards imagePath={item.img} alt={item.alt} />
+            <Cards class="mr-7" imagePath={item.img} alt={item.alt} />
             <p class="card-name">{item.alt}</p>
           </div>
         );

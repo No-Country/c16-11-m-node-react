@@ -2,13 +2,14 @@
 interface Props {
   imagePath: string;
   alt: string;
+  class?: string;
 }
 
-const { imagePath, alt } = Astro.props;
+const { imagePath, alt, class: className } = Astro.props;
 ---
 
-<article class="card mr-0 md:mr-10">
-  <img class="card-image" src={imagePath} alt={alt} />
+<article class=`card ${className}`>
+  <img class=`card-image` src={imagePath} alt={alt} />
 </article>
 
 <style>
@@ -17,7 +18,6 @@ const { imagePath, alt } = Astro.props;
     height: 280px;
     border-radius: 80px;
     overflow: hidden;
-    margin-bottom: 20px;
     border-style: black;
     border-width: 2px;
   }
@@ -25,6 +25,6 @@ const { imagePath, alt } = Astro.props;
   .card-image {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
   }
 </style>

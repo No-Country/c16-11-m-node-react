@@ -9,7 +9,7 @@ const { data, colorFont } = Astro.props;
 
 <div class="list-of-cards">
   <h2 class=`${colorFont}`>Productos relacionados</h2>
-  <div class="w-full h-[370px] overflow-x-auto flex">
+  <div class="w-full h-[370px] overflow-x-auto flex pl-11 md:pl-16">
     {
       !data ? (
         <p>No hay productos relacionados</p>
@@ -17,7 +17,11 @@ const { data, colorFont } = Astro.props;
         data.content.map((item) => {
           return (
             <div class="h-full">
-              <Cards imagePath={item.imagen[0].secure_url} alt={item.name} />
+              <Cards
+                class="mr-10"
+                imagePath={item.imagen[0].secure_url}
+                alt={item.name}
+              />
               <p class="card-name">{item.name}</p>
             </div>
           );

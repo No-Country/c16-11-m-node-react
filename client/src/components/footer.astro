@@ -3,7 +3,7 @@ import { siteConfig } from "../config/site";
 ---
 
 <footer
-  class="font-lobster w-full h-auto mt-10 bg-[#F6D0E0] py-10 px-5 md:px-20 max-w-5xl md:py-10 lg:max-w-6xl xl:max-w-full"
+  class="font-lobster w-full h-auto mt-10 bg-[#F6D0E0] pb-6 px-5 md:px-20 max-w-5xl md:pt-10 lg:max-w-6xl xl:max-w-full"
 >
   <div class="w-full flex flex-col md:flex-row gap-x-20 text-xl">
     <div class="w-1/3">
@@ -52,12 +52,12 @@ import { siteConfig } from "../config/site";
       <h4 class="text-3xl pb-5 text-[#CD27A0]">Contáctenos</h4>
       <div class="flex flex-col gap-y-2">
         <div class="text-[#636B78] flex items-center gap-x-4">
-          <img class="size-10" src="icons/phone.webp" alt="" />
+          <img class="size-10" src="/icons/phone.webp" alt="" />
           <p class="pt-2">{siteConfig.phone}</p>
         </div>
 
         <div class="text-[#CD276C] flex gap-x-4">
-          <img class="size-10" src="icons/email.webp" alt="" />
+          <img class="size-10" src="/icons/email.webp" alt="" />
           <p class="pt-2">{siteConfig.email}</p>
         </div>
 
@@ -104,16 +104,18 @@ import { siteConfig } from "../config/site";
   </div>
 
   <div class="flex flex-col justify-center">
-    <div class="flex justify-start">
-      <p class="text-[#636B78] font-poppins font-extrabold">
+    <div class="flex justify-start text-center">
+      <p class="text-[#636B78] font-poppins font-bold text-sm">
         El color y el precio de algunos de los productos pueden variar. Cada
         producto o servicio es único y original, tú eres el diseñador, nosotros
         te asesoramos y hacemos realidad tus necesidades.
       </p>
     </div>
 
-    <div class="flex flex-col md:flex-row gap-x-10 justify-center items-center">
-      <img src="logo.webp" alt="Detalles Luna" />
+    <div
+      class="flex flex-col md:flex-row gap-x-10 mt-5 justify-center items-center"
+    >
+      <img class="size-16" src="/logo.webp" alt="Detalles Luna" />
       <p class="text-[#0E8783] text-2xl">
         © Detalles luna, todos los derechos reservados
       </p>

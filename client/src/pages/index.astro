@@ -3,22 +3,16 @@ import SectionDestacados from "../components/Home/sectionDestacados.astro";
 import SectionNovedades from "../components/Home/sectionNovedades.astro";
 import SectionOfertas from "../components/Home/sectionOfertas.astro";
 import Brands from "../components/brands.astro";
-import Footer from "../components/footer.astro";
 import ListOfImage from "../components/listOfImage.astro";
 import ListOfReviews from "../components/listOfReviews.astro";
 import NewStore from "../components/newStore.astro";
 import Section from "../components/section.astro";
 import SliderEmpresas from "../components/sliderEmpresas.astro";
 import Title from "../components/title.astro";
-import { siteConfig } from "../config/site";
 import Layout from "../layouts/Layout.astro";
-const defaultSlider = [
-  { img: "/photos/producto2.webp", alt: "First placeholder", active: true },
-  { img: "/photos/producto2.webp", alt: "Second placeholder" },
-  { img: "/photos/producto3.webp", alt: "Third placeholder" },
-  { img: "/photos/producto2.webp", alt: "Second placeholder" },
-  { img: "/photos/producto3.webp", alt: "Third placeholder" },
-];
+
+import { siteConfig } from "../config/site";
+import { defaultSlider } from "../utils/slider";
 ---
 
 <Layout title={siteConfig.name}>
@@ -159,4 +153,4 @@ const defaultSlider = [
     max-width: 100%;
     margin: 10px 0px;
   }
-</style>
+</style>../utils/slider.ts

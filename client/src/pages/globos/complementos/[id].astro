@@ -4,19 +4,17 @@ import Layout from "../../../layouts/Layout.astro";
 import { getGlobos } from "../../../services/getGlobos";
 
 const GLOBOS = {
-  TEMATICOS: {
-    bebes: "65d558c840c36abe29c885f1",
-    boda: "65d5595240c36abe29c885f9",
-    celebraciones: "65dfd7fe7b09110901ae1ec8",
-    varilla: "65dfd80a7b09110901ae1eca",
-    infantiles: "65dfd81e7b09110901ae1ece",
-  }
+  COMPLEMENTOS: {
+    centrodemesa: "65dfd9507b09110901ae1ee0",
+    contrapeso: "65dfd9f17b09110901ae1ee4",
+    decorativos: "65dfddce7b09110901ae1eec",
+  },
 };
 
 const { id } = Astro.params;
 
 const urlId = (id: string) => {
-  if (GLOBOS.TEMATICOS[id]) return GLOBOS.TEMATICOS[id];
+  if (GLOBOS.COMPLEMENTOS[id]) return GLOBOS.COMPLEMENTOS[id];
 };
 const url = urlId(id!);
 const data = await getGlobos(url);

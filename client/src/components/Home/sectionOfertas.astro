@@ -19,16 +19,15 @@ const data = await getSection(homeUrls.ofertas);
   id={title}
   class=`box-content px-5 my-10 mx-auto max-w-5xl md:py-10 lg:max-w-6xl xl:max-w-7xl`
 >
+  <TitleOfertas name={title} />
 
-  <TitleOfertas name={title}/>
-
-    <Hero
+  <Hero
     title={data.content[0].name}
     description={data.content[0].description}
     images={data.content[0].imagen[0].secure_url}
   />
-  <Listofcards data={data} colorFont="text-[#D9176A]"/>
+  <Listofcards data={data} colorFont="text-[#D9176A]" />
   <Espec />
-
 </section>
 
+../../fetch/getSection../../fetch/urls
