@@ -6,13 +6,12 @@ import TitleOfertas from "../../components/titleOfertas.astro";
 
 import { getSection } from "../../services/getSection";
 import { homeUrls } from "../../services/urls";
+import { OFERTAS } from "../../utils/sectionImage";
 
 interface Props {
   title: string;
 }
 const { title } = Astro.props;
-
-const data = await getSection(homeUrls.ofertas);
 ---
 
 <section
@@ -22,12 +21,10 @@ const data = await getSection(homeUrls.ofertas);
   <TitleOfertas name={title} />
 
   <Hero
-    title={data.content[0].name}
-    description={data.content[0].description}
-    images={data.content[0].imagen[0].secure_url}
+    title={OFERTAS.image_hero.name}
+    description={OFERTAS.image_hero.description}
+    images={OFERTAS.image_hero.url}
   />
-  <Listofcards data={data} colorFont="text-[#D9176A]" />
+  <Listofcards data={OFERTAS.images} colorFont="text-[#D9176A]" />
   <Espec />
 </section>
-
-../../fetch/getSection../../fetch/urls

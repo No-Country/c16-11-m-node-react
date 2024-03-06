@@ -1,19 +1,15 @@
 ---
-const defaultSlider = [
-  { img: "/photos/producto2.png", alt: "First placeholder", active: true },
-  { img: "/photos/producto2.png", alt: "Second placeholder" },
-  { img: "/photos/producto3.png", alt: "Third placeholder" },
+const empresasSlider = [
+  { img: "/photos/Empresas/imagen1.jpeg", alt: "First placeholder"},
+  { img: "/photos/Empresas/imagen6.jpg", alt: "Second placeholder" },
 ];
-
-const { slider } = Astro.props;
-console.log(slider);
 ---
 
 <div id="controls-carousel" class="relative w-full" data-carousel="static">
   <!-- Carousel wrapper -->
   <div class="relative h-56 overflow-hidden rounded-[80px] md:h-[520px]">
     {
-      defaultSlider.map((slide) => (
+      empresasSlider.map((slide) => (
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
           <img
             src={slide.img}
