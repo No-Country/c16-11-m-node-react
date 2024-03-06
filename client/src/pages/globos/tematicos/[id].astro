@@ -37,12 +37,14 @@ const data = await getGlobos(url);
             <div class="flex flex-col w-auto">
               <article class="card mr-0 md:mr-10">
                 <a href=`/globos/tematicos/${id}/${item._id}/` >
+                  {item.imagen && item.imagen[0] && (
                 <img
                   class="card-image"
                   src={item.imagen[0].secure_url}
                   alt={item.name}
                 />
-                </a>
+                )}
+              </a>
               </article>
               <p class="card-name">{item.name}</p>
             </div>  

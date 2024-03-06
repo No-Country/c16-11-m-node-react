@@ -29,7 +29,7 @@ console.log(data);
       <div class="md:w-2/4">
         <img
           class="h-[390px] w-full rounded-[80px] object-cover border-black border"
-          src={data.content.imagen[0].secure_url}
+          src={data.content.imagen[0]?.secure_url}
           alt={data.content.name}
         />
         <!-- <Carrusel slider={images} /> -->
