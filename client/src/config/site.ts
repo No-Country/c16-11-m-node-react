@@ -9,6 +9,10 @@ export const siteConfig = {
   facebook: "https://www.facebook.com/detallesluna",
   instagram: "https://www.instagram.com/detallesluna",
   twitter: "https://twitter.com/detallesluna",
+  whatsApp: "",
+  pinterest: "https://www.pinterest.com/detalles_luna/",
+  linkedIn: "https://www.linkedin.com/company/detalles-luna/about/",
+
 
   // Contact
   phone: "954128609",
