@@ -16,7 +16,7 @@ Content-Type: application/json
 }
 
 ### delete product by id
-DELETE http://localhost:8000/products/delete/65d9ef35290077066eb0bd80
+DELETE http://localhost:8000/products/delete/65e7cff9bf3f381ba405b5d1
 
 ### update etiquetas - ok [ofertas , novedades , destacados]
 PATCH http://localhost:8000/products/etiquetas/patch

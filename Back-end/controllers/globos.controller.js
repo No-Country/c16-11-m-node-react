@@ -15,16 +15,18 @@ const createGlobos = async (req, res, next) => {
         // Verificar si se adjuntaron imágenes en la solicitud
         if (req.files && req.files.image) {
             const uploadedImages = [];
+            // Convertir req.files.image en un array si es un solo objeto
+            const images = Array.isArray(req.files.image) ? req.files.image : [req.files.image];
             // Subir cada imagen a Cloudinary y obtener los resultados
-            for (let i = 0; i < req.files.image.length; i++) {
-                const result = await uploadImage(req.files.image[i].tempFilePath);
+            for (let i = 0; i < images.length; i++) {
+                const result = await uploadImage(images[i].tempFilePath);
                 uploadedImages.push({
                     public_id: result.public_id,
                     secure_url: result.secure_url
                 });
                 // Eliminar el archivo temporal después de subirlo a Cloudinary
-                if (req.files.image[i].tempFilePath) {
-                    await fs.unlink(req.files.image[i].tempFilePath);
+                if (images[i].tempFilePath) {
+                    await fs.unlink(images[i].tempFilePath);
                 }
             }
             // Asignar las imágenes al globo
@@ -33,12 +35,12 @@ const createGlobos = async (req, res, next) => {
 
         await globo.save();
 
-        res.status(201);
-        res.json(makeSuccessResponse(globo));
+        res.status(201).json(makeSuccessResponse(globo));
     } catch (err) {
         next(err);
     }
 };
+
 
 
 

@@ -23,12 +23,12 @@ GET http://localhost:8000/decoraciones/get/65d57af3d1
 ### get decoraciones for Category - ok
 
 ###------------------------------FIGURAS---------------------------------
-GET http://localhost:8000/decoraciones/globosBySubCategory/65d6bf0e9c3efb921d7aa923
+GET http://localhost:8000/decoraciones/decoracionBySubCategory/65d6bf0e9c3efb921d7aa923
 
 
 ###-------------------------------ARCOS----------------------------------
-GET http://localhost:8000/decoraciones/globosBySubCategory/65d6bf069c3efb921d7aa921
+GET http://localhost:8000/decoraciones/decoracionBySubCategory/65d6bf069c3efb921d7aa921
 
 
 ###-----------------------------PhotoCall--------------------------------
-GET http://localhost:8000/decoraciones/globosBySubCategory/65d6bee79c3efb921d7aa91f
+GET http://localhost:8000/decoraciones/decoracionBySubCategory/65d6bee79c3efb921d7aa91f
