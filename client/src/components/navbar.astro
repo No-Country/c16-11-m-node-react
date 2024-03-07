@@ -1,5 +1,6 @@
 ---
 import Header from "./Header.astro";
+import { siteConfig } from "../config/site";
 ---
 
 <header class="">
@@ -18,12 +19,12 @@ import Header from "./Header.astro";
       </div>
       <div class="social-icons">
         <div class="social-content">
-          <img src="/icons/whatsapp.webp" alt="WhatsApp Detalles luna" />
-          <img src="/icons/facebook.webp" alt="Facebook Detalles luna" />
-          <img src="/icons/instagram.webp" alt="Instagram Detalles luna" />
-          <img src="/icons/pinterest.webp" alt="Pinterest Detalles luna" />
-          <img src="/icons/linkedin.webp" alt="LinkedIn Detalles luna" />
-          <img src="/icons/gorjeo.webp" alt="Detalles luna Twitter" />
+          <a href=`https://wa.me/${siteConfig.phone}`><img src="/icons/whatsapp.webp" alt="WhatsApp Detalles luna" /></a>
+          <a href={siteConfig.facebook}> <img src="/icons/facebook.webp" alt="Facebook Detalles luna" /></a>
+          <a href={siteConfig.instagram}><img src="/icons/instagram.webp" alt="Instagram Detalles luna" /></a>
+          <a href={siteConfig.pinterest}><img src="/icons/pinterest.webp" alt="Pinterest Detalles luna" /></a>
+          <a href={siteConfig.linkedIn}><img src="/icons/linkedin.webp" alt="LinkedIn Detalles luna" /></a>
+          <a href={siteConfig.twitter}><img src="/icons/gorjeo.webp" alt="Detalles luna Twitter" /></a>
         </div>
       </div>
     </div>
