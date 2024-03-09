@@ -1,0 +1,53 @@
+---
+import Section from "../components/section.astro";
+import { siteConfig } from "../config/site";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title={siteConfig.name}>
+<main>
+  <header>
+    <h2 class="h2">
+      Decoración de globos para bodas
+      <div class="text">
+      <h3>¿Buscas la mejor decoración de globos para bodas? ¡Pues no busques más! Has llegado a la mejor tienda de globos que vas a encontrar.</h3>
+        <p>Te aseguramos que, si decides confiarnos la decoración de globos para tu boda a nosotros, no te vas a arrepentir. Somos los mejores 
+          expertos en globos, ya que contamos con un profundo conocimiento del sector y del mundo de la decoración, así como con años de 
+          experiencia trabajando para ofrecerte las decoraciones con globos para bodas más espectaculares.
+          Buscamos, siempre, el tipo de globo que más se adapte a los gustos y a la personalidad de los novios, pero también que combine con la decoración y el ambiente de la celebración.</p>    
+        </div>
+    </h2>
+  </header>
+</main>
+</Layout>
+
+<style>
+  .hero-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 25vh; 
+    max-width: 100%;
+    margin: auto;
+  }
+
+  .h2 {
+    font-family: "Lobster Two", system-ui;
+    font-size: 35px;
+    color: #E95090;
+    text-align: left; 
+    max-width: 100%;
+    margin: 40px 40px;
+    
+  }
+
+  .text {
+    font-family: "Lobster Two", system-ui;
+    font-size: 20px;
+    color: #7E8795;
+    text-align: left; 
+    max-width: 100%;
+    margin: 20px 20px;
+    
+  }
+</style>

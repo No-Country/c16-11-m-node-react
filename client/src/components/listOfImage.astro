@@ -1,0 +1,65 @@
+---
+import Button from "./button.astro";
+import Cards from "./cards.astro";
+const { images } = Astro.props;
+---
+
+<div class="list-of-cards">
+  <div class="w-full h-[350px] overflow-x-auto flex">
+    {
+      images?.map((item) => {
+        return (
+          <div class=" h-full">
+            <Cards class="mr-7" imagePath={item.img} alt={item.alt} />
+            <p class="card-name">{item.alt}</p>
+          </div>
+        );
+      })
+    }
+  </div>
+</div>
+<div class="button-container flex-end justify-end">
+  <Button />
+</div>
+
+<style>
+  .list-of-cards {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2%;
+    position: relative;
+  }
+
+  .list-of-cards h2 {
+    font-family: "Lobster Two", system-ui;
+    font-size: 28px;
+    color: #11a4ee;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .card-name {
+    text-align: center;
+    font-family: "Lobster Two", system-ui;
+    font-size: 18px;
+    color: #636b78;
+  }
+
+  .button-container {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    bottom: 20px;
+  }
+
+  .button {
+    width: 150px;
+    background-color: #d1d4d6;
+    color: #495057;
+    font-family: "Lobster Two", system-ui;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+</style>

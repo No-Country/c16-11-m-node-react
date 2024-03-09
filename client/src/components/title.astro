@@ -1,0 +1,31 @@
+---
+interface Props {
+  color?: string,
+  fontColor?: string
+}
+const {color, fontColor} = Astro.props
+---
+<div class=`flex rounded-t-[50px] py-3 px-1 mb-[10px] ${color} title`>
+<h2 class=`font-lobster ${fontColor}`>
+    <slot/>
+</h2>
+</div>
+
+
+<style scoped>
+  .container {
+    border-top-left-radius: 50px; 
+    border-top-right-radius: 50px; 
+    margin-top: 0px;
+    margin-bottom: 10%;  
+  }
+
+  .title {
+    padding: 0px 10px;
+
+  }
+  .title h2 {
+    margin: 0 30px;
+    font-size: 50px;
+  }
+</style>

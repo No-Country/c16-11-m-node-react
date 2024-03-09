@@ -1,0 +1,163 @@
+---
+import SectionDestacados from "../components/Home/sectionDestacados.astro";
+import SectionNovedades from "../components/Home/sectionNovedades.astro";
+import SectionOfertas from "../components/Home/sectionOfertas.astro";
+import Brands from "../components/brands.astro";
+import ListOfImage from "../components/listOfImage.astro";
+import ListOfReviews from "../components/listOfReviews.astro";
+import NewStore from "../components/newStore.astro";
+import Section from "../components/section.astro";
+import SliderEmpresas from "../components/sliderEmpresas.astro";
+import Title from "../components/title.astro";
+import Layout from "../layouts/Layout.astro";
+
+import { siteConfig } from "../config/site";
+import { defaultSlider } from "../utils/slider";
+---
+
+<Layout title={siteConfig.name}>
+  <main class="w-full">
+    {/* Hero */}
+    <header class="hero-container">
+      <h2 class="h2">
+        ¡Descubre las mejores ideas para decorar tus eventos con globos!
+      </h2>
+    </header>
+
+    {/* Secciones Principales */}
+    <SectionDestacados title="Productos destacados" />
+
+    <SectionOfertas title="Ofertas del Mes" />
+
+    <SectionNovedades title="Novedades de la Semana" />
+
+    {/* Secciones Decoración para Empresas */}
+    <Section title="empresas">
+      <Title fontColor="text-[#B72483]">Empresas</Title>
+      <div class="md:w-full px-10">
+        <SliderEmpresas slider={defaultSlider} />
+      </div>
+    </Section>
+
+    {/* Secciones de Descripción */}
+    <Section title="Descripciòn">
+      <h2 class="text-[#CA2279] font-lobster text-5xl px-10 mb-[10px]">
+        Descripción
+      </h2>
+      <p class="font-lobster text-[#1F2328] px-10 mt-10 mb-[10px] text-2xl">
+        Realizamos todo tipo de decoraciones y eventos para
+        empresas principalmente mediante decoración con globos para:<br>
+        - Fiestas de empresas<br> 
+        - Inauguraciones<br>
+        - Campañas personalizadas (rebajas - Black Friday - Navidades - San Valentin - etc.)<br> 
+        - Productos personalizados con logo de la empresa<br>
+      </p>
+      <ListOfImage images={defaultSlider} />
+    </Section>
+
+    {/* Secciones de Reviews */}
+    <Section title="Reviews">
+      <Title fontColor="text-[#B72483]">
+        Reseña de nuestros Clientes, amigos y familiares
+      </Title>
+      <ListOfReviews />
+    </Section>
+
+    {/* Secciones de Marcas */}
+    <Section title="Marcas que colaboran con Nosotros">
+      <Title fontColor="text-[#036C7C]">
+        Marcas que colaboran con Nosotros
+      </Title>
+      <Brands />
+    </Section>
+
+    {/* Secciones de Sobre Nosotros */}
+    <Section title="sobre-nosotros">
+      <Title fontColor="text-[#b72483]">Sobre Nosotros</Title>
+      <p class="font-lobster text-4xl px-10 py-6 text-[#0E8783]">
+        Bienvenidos A detalles Luna, Especializados en decoraciones con globos
+      </p>
+      <img
+        class="w-full h-[600px] rounded-[80px] px-10 bg-center object-cover"
+        src="/photos/Sobre nosotros/team-detalles-luna.jpeg"
+        alt="Equipo"
+      />
+    </Section>
+
+    {/* Secciones de Nuestra Nueva Tienda */}
+    <Section title="Nuestra nueva tienda">
+      <Title fontColor="text-[#E670A1]">Nuestra Nueva Tienda</Title>
+      <p class="font-lobster text-2xl px-10 py-6 text-[#636B78]">
+        Aprovechamos el cambio de local para renovar nuestra imagen y añadir
+        nuevos servicios que ponemos a tu disposición en el nuevo local. <b
+          >Nueva ubicación en la Avenida de Europa 8, 41089 Montequinto.</b
+        > A escasos 100 metros de nuestro anterior local y muy <b
+          >cerca de la para de metro Europa de la linea 1.</b
+        >
+      </p>
+      <NewStore />
+    </Section>
+
+    {/* Secciones de Nuestra Filosofia */}
+    <Section title="Nuestra filosofia de vida son los globos">
+      <Title fontColor="text-[#DD387D]">
+        Nuestra Filosofía De Vida Son Los Globos
+      </Title>
+      <h4>
+      <p class=" block font-lobster text-[#7e8795] text-2xl px-10">
+        En Detalles Luna encontrarás todo lo necesario para la decoración de
+        eventos. Somos expertos en decoraciones con globos y daremos a tus
+        eventos mayor visibilidad. También disponemos de un amplio surtido de
+        detalles para regalo.</p>
+
+
+      <p class=" block font-lobster text-[#7e8795] text-2xl px-10">
+        Puedes hacer tu pedido online y pedir presupuesto
+        y recoger luego el producto en nuestra tienda de Montequinto, si lo
+        prefieres, podemos encargarnos de realizar los montajes para que no
+        tengas que preocuparte de nada.
+      </p>
+      </h4>
+    </Section>
+
+    {/* Secciones de Donde Nos puedes Encontrar */}
+    <Section title="ubicacion">
+      <Title fontColor="text-[#0E877D]">¿Dónde Nos puedes Encontrar?</Title>
+      <div class="w-full flex flex-col md:flex-row gap-x-56 px-10 text-xl">
+        <img class="w-1/2" src="/photos/ubicacion.webp" alt="ubicacion" />
+
+        <div class="flex flex-col gap-y-10 text-left w-auto h-auto">
+          <h6 class="text-[#418C98] text-2xl font-lobster">Detalles Luna</h6>
+          <p class="text-[#636B78] font-lobster">
+            {siteConfig.address}
+          </p>
+          <p class="font-lobster text-[#0E8783] text-2xl">Área de Distribución</p>
+          <p class="font-lobster text-[#636B78]">
+            Sevilla, España - Bellavista, España <br />
+            - Estación de Montequinto, España <br />
+            - Dos Hermanas, España - Alcalá de Guadaíra, España
+          </p>
+        </div>
+      </div>
+    </Section>
+  </main>
+</Layout>
+
+<style>
+  .hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+    margin: auto;
+  }
+
+  .h2 {
+    font-family: "Lobster Two", system-ui;
+    font-size: 40px;
+    color: #ca2279;
+    text-align: center;
+    max-width: 100%;
+    margin: 10px 0px;
+  }
+</style>

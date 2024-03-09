@@ -1,0 +1,30 @@
+---
+import Espec from "../../components/espec.astro";
+import Hero from "../../components/hero.astro";
+import Listofcards from "../../components/listofcards.astro";
+import TitleOfertas from "../../components/titleOfertas.astro";
+
+import { getSection } from "../../services/getSection";
+import { homeUrls } from "../../services/urls";
+import { OFERTAS } from "../../utils/sectionImage";
+
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<section
+  id={title}
+  class=`box-content px-5 my-10 mx-auto max-w-5xl md:py-10 lg:max-w-6xl xl:max-w-7xl`
+>
+  <TitleOfertas name={title} />
+
+  <Hero
+    title={OFERTAS.image_hero.name}
+    description={OFERTAS.image_hero.description}
+    images={OFERTAS.image_hero.url}
+  />
+  <Listofcards data={OFERTAS.images} colorFont="text-[#D9176A]" />
+  <Espec />
+</section>

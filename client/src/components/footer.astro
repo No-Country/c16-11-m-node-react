@@ -1,0 +1,127 @@
+---
+import { siteConfig } from "../config/site";
+import Espec from "./espec.astro";
+
+---
+
+<footer
+  id="footer"
+  class="font-poppins font-light w-full h-auto mt-10 bg-[#006877]/90 pb-6 px-5 md:px-20 max-w-5xl md:pt-10 lg:max-w-6xl xl:max-w-full"
+>
+  <div class="w-full flex flex-col md:flex-row gap-x-20 text-xl">
+    <div class="w-1/3">
+      <h4 class="text-2xl pb-5 text-[#ffffff] font-bold">¿Dónde Nos puedes encontrar?</h4>
+      <p class="text-[#FFFBFF]">
+        Avenida Europa 8, Montequinto <br />
+        41089 Dos Hermanas, España
+      </p>
+    </div>
+    <div class="w-1/4">
+      <h4 class="text-2xl pb-5 text-[#ffffff] font-bold">Productos</h4>
+      <p class="text-[#fffbff]">
+        Productos Destacados <br />
+        Ofertas del mes <br />
+        Novedades de la semana <br />
+        Decoración <br />
+        Globos <br />
+        Empresas <br />
+      </p>
+    </div>
+    <div class="w-1/4">
+      <h4 class="text-2xl pb-5 text-[#ffffff] font-bold">Nuestra Empresa</h4>
+      <p class="text-[#fffbff]">
+        Envíos <br />
+        Aviso Legal <br />
+        Sobre nosotros <br />
+        Pago seguro <br />
+        Contacte con nosotros <br />
+        Mapa del sitio <br />
+        Tiendas
+      </p>
+    </div>
+  </div>
+
+  <div
+    id="contactos"
+    class="w-full flex flex-col md:flex-row justify-between mb-16"
+  >
+    <div class="rounded-xl bg-white/60 w-[410px] p-5">
+      <h4 class="text-3xl pb-5 text-[#ffffff] font-bold">Contáctanos</h4>
+      <div class="flex flex-col gap-y-2">
+        <div class="text-[#098680] flex items-center gap-x-4">
+          <img class="size-8" src="/icons/phone_footer.png" alt="" />
+          <p class="pt-2">{siteConfig.phone}</p>
+        </div>
+
+        <div class="text-[#00614A] flex gap-x-4 font-bold">
+          <img class="size-10" src="/icons/email.webp" alt="" />
+          <a href="mailto:info@detallesluna.com" class="pt-2">{siteConfig.email}</a>
+        </div>
+
+        <a href="" class="text-[#ffffff] inline-block font-lobster text-xl">
+          {siteConfig.url}
+        </a>
+      </div>
+    </div>
+
+    <div id="icons" class="w-full flex justify-center items-center md:justify-end">
+      <div class="flex w-[350px] h-16 gap-x-3 my-2 justify-end px-6 items-center rounded-3xl bg-white/60 p-3">
+          <a href=`https://wa.me/${siteConfig.phone}`><img class="" src="/icons/whatsapp.webp" alt="WhatsApp Detalles luna" /></a>
+          <a href={siteConfig.facebook}> <img src="/icons/facebook.webp" alt="Facebook Detalles luna" /></a>
+          <a href={siteConfig.instagram}><img src="/icons/instagram.webp" alt="Instagram Detalles luna" /></a>
+          <a href={siteConfig.pinterest}><img src="/icons/pinterest.webp" alt="Pinterest Detalles luna" /></a>
+          <a href={siteConfig.linkedIn}><img src="/icons/linkedin.webp" alt="LinkedIn Detalles luna" /></a>
+          <a href={siteConfig.twitter}><img src="/icons/gorjeo.webp" alt="Detalles luna Twitter" /></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="paragraph-container">
+    <img src="/icons/globo.webp" alt="icono de globo" class="icon" />
+    <p>
+      <span class="first-part"
+        >El color y el precio de algunos de los productos pueden variar.</span
+      >
+      <span class="second-part"
+        >Cada producto o servicio es único y original, tú eres el diseñador,
+        nosotros te asesoramos y hacemos realidad tus necesidades.</span
+      >
+    </p>
+  </div>
+
+    <div
+      class="flex flex-col md:flex-row gap-x-10 mt-5 justify-center items-center"
+    >
+      <img class="size-20" src="/logo.webp" alt="Detalles Luna" />
+      <p class="text-[#ffffff] text-2xl font-lobster">
+        © Detalles luna, todos los derechos reservados
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .paragraph-container {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 25px;
+  }
+
+  .icon {
+    width: 24px;
+    height: auto;
+    margin-right: 0.3em;
+  }
+
+  .first-part {
+    color: #004233;
+    font-weight: bold;
+    font-family: "Poppins";
+  }
+
+  .second-part {
+    color: #FFFDFA;
+    font-weight: bold;
+    font-family: "Poppins";
+  }
+</style>

@@ -1,0 +1,200 @@
+---
+import Header from "./Header.astro";
+import { siteConfig } from "../config/site";
+---
+
+<header class="">
+  <nav class="navbar">
+    <div class="pink-section fixed top-0 z-50">
+      <div class="phone">
+        <div class="phone-content">
+          <img src="/icons/phone.webp" alt="Phone Icon" />
+          <span class="phone-number">954128609</span>
+          <span class="horarios">Horarios</span>
+          <img src="/icons/flecha.webp" alt="Arrow Icon" class="arrow" />
+        </div>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar..." />
+      </div>
+      <div class="social-icons">
+        <div class="social-content">
+          <a href=`https://wa.me/${siteConfig.phone}`><img src="/icons/whatsapp.webp" alt="WhatsApp Detalles luna" /></a>
+          <a href={siteConfig.facebook}> <img src="/icons/facebook.webp" alt="Facebook Detalles luna" /></a>
+          <a href={siteConfig.instagram}><img src="/icons/instagram.webp" alt="Instagram Detalles luna" /></a>
+          <a href={siteConfig.pinterest}><img src="/icons/pinterest.webp" alt="Pinterest Detalles luna" /></a>
+          <a href={siteConfig.linkedIn}><img src="/icons/linkedin.webp" alt="LinkedIn Detalles luna" /></a>
+          <a href={siteConfig.twitter}><img src="/icons/gorjeo.webp" alt="Detalles luna Twitter" /></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="white-section sm:mt-16">
+      <div class="logo">
+        <a href="/">
+          <img src="/logo-detalles-luna.webp" alt="Logo Detalles Luna" />
+        </a>
+      </div>
+
+      <!-- <div class="menu">
+        <ul>
+          <li><a href="/decoracion">Decoración</a></li>
+          <li><a href="/globos">Globos</a></li>
+          <li><a href="/detalles">Detalles</a></li>
+          <li><a href="#empresas">Empresas</a></li>
+          <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+          <li><a href="#ubicacion" class="last-menu-item">Contacto</a></li>
+          <li>
+            <img src="/icons/megusta.webp" alt="Me gusta" class="social-icon" />
+          </li>
+        </ul>
+      </div> -->
+      <Header />
+    </div>
+  </nav>
+</header>
+
+<style scoped>
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+  }
+
+  .pink-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFB0CC;
+    padding: 1rem;
+  }
+
+  .phone {
+    display: flex;
+    align-items: center;
+    color: #9dcbca;
+  }
+
+  .phone-content {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    width: auto;
+    padding: 5px 10px 5px 15px;
+    border-radius: 20px;
+  }
+
+  .phone img {
+    width: 35px;
+    margin-right: 5px;
+    color: #098680;
+  }
+
+  .phone .phone-number {
+    color: #098680;
+    margin-right: 30px;
+    font-weight: bold;
+    font-family: "Poppins";
+  }
+
+  .phone .horarios {
+    color: #b72483;
+    margin-right: 10px;
+    font-family: "Poppins";
+  }
+
+  .arrow {
+    width: 3px;
+    color: #b72483;
+  }
+
+  .search-bar {
+    border-radius: 20px;
+    background-color: white;
+    padding: 5px 10px;
+  }
+
+  .search-bar input {
+    border: none;
+    outline: none;
+    width: 200px;
+    padding: 2px;
+    border-radius: 20px;
+  }
+
+  .social-icons {
+    display: flex;
+    align-items: center;
+  }
+
+  .social-content {
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    width: auto;
+    padding: 8px 8px 8px 15px;
+    border-radius: 20px;
+  }
+
+  .social-icons img {
+    width: 30px;
+    margin-right: 10px;
+  }
+
+  .social-icon {
+    width: 40px;
+    color: #f6cfdf;
+    margin-top: 0px;
+  }
+
+  .white-section {
+    text-align: center;
+  }
+
+  .logo img {
+    margin: 35px auto;
+  }
+
+  .menu ul {
+    list-style-type: none;
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    border-bottom: 3px solid #8ac2be;
+  }
+
+  .menu li a {
+    font-size: 25px;
+    font-family: "Lobster Two", system-ui;
+    text-decoration: none;
+    color: #0e877d;
+  }
+  .menu li a.last-menu-item {
+    color: #2E636B;
+  }
+
+  @media (width <= 390px) {
+    .navbar {
+      width: 100%;
+    }
+
+    .white-section {
+      text-align: center;
+      margin-top: 180px;
+    }
+    .pink-section {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      margin: 35px auto;
+      width: 200px;
+    }
+    .menu ul {
+      flex-direction: column;
+    }
+  }
+</style>
